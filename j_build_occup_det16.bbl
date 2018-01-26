@@ -1,0 +1,192 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Agarwal, Hodges, Chandra, Scott, Bahl, and
+  Gupta}{Agarwal et~al\mbox{.}}{2009}]{agarwal2009augnet}
+{\sc Agarwal, Y.}, {\sc Hodges, S.}, {\sc Chandra, R.}, {\sc Scott, J.}, {\sc
+  Bahl, P.}, {\sc and} {\sc Gupta, R.} 2009.
+\newblock Somniloquy: Augmenting network interfaces to reduce pc energy usage.
+\newblock ~{\em 9}, 365--380.
+
+\bibitem[\protect\citeauthoryear{Agarwal, Savage, and Gupta}{Agarwal
+  et~al\mbox{.}}{2010}]{agarwal2010sleep}
+{\sc Agarwal, Y.}, {\sc Savage, S.}, {\sc and} {\sc Gupta, R.} 2010.
+\newblock Sleepserver: A software-only approach for reducing the energy
+  consumption of pcs within enterprise environments.
+\newblock 22--22.
+
+\bibitem[\protect\citeauthoryear{Bias and Cheng}{Bias and
+  Cheng}{1999}]{bias1999elec}
+{\sc Bias, L.~S.} {\sc and} {\sc Cheng, C.~M.} 1999.
+\newblock Electronic programmable thermostat with temporary reset.
+
+\bibitem[\protect\citeauthoryear{Delaney, O'Hare, and Ruzzelli}{Delaney
+  et~al\mbox{.}}{2009}]{delaney2009eval}
+{\sc Delaney, D.~T.}, {\sc O'Hare, G.~M.}, {\sc and} {\sc Ruzzelli, A.~G.}
+  2009.
+\newblock Evaluation of energy-efficiency in lighting systems using sensor
+  networks.
+\newblock 61--66.
+
+\bibitem[\protect\citeauthoryear{Dodier, Henze, Tiller, and Guo}{Dodier
+  et~al\mbox{.}}{2006}]{Dodier2006Building}
+{\sc Dodier, R.~H.}, {\sc Henze, G.~P.}, {\sc Tiller, D.~K.}, {\sc and} {\sc
+  Guo, X.} 2006.
+\newblock Building occupancy detection through sensor belief networks.
+\newblock {\em Energy and Buildings\/}~{\em 38,\/}~9, 1033--1043.
+
+\bibitem[\protect\citeauthoryear{Ekwevugbe, Brown, Pakka, and Fan}{Ekwevugbe
+  et~al\mbox{.}}{2013}]{Ekwevugbe2013Real}
+{\sc Ekwevugbe, T.}, {\sc Brown, N.}, {\sc Pakka, V.}, {\sc and} {\sc Fan, D.}
+  2013.
+\newblock Real-time building occupancy sensing using neural-network based
+  sensor network.
+\newblock 114--119.
+
+\bibitem[\protect\citeauthoryear{Elman}{Elman}{1990}]{elman1990finding}
+{\sc Elman, J.~L.} 1990.
+\newblock Finding structure in time.
+\newblock {\em Cognitive Science A Multidisciplinary Journal\/}~{\em 14,\/}~2,
+  179--211.
+
+\bibitem[\protect\citeauthoryear{Erickson, Lin, Kamthe, Brahme, Surana, Cerpa,
+  Sohn, and Narayanan}{Erickson et~al\mbox{.}}{2009}]{erickson2009energy}
+{\sc Erickson, V.~L.}, {\sc Lin, Y.}, {\sc Kamthe, A.}, {\sc Brahme, R.}, {\sc
+  Surana, A.}, {\sc Cerpa, A.~E.}, {\sc Sohn, M.~D.}, {\sc and} {\sc Narayanan,
+  S.} 2009.
+\newblock Energy efficient building environment control strategies using
+  real-time occupancy measurements.
+\newblock 19--24.
+
+\bibitem[\protect\citeauthoryear{Gao and Whitehouse}{Gao and
+  Whitehouse}{2009}]{gao2009selfprog}
+{\sc Gao, G.} {\sc and} {\sc Whitehouse, K.} 2009.
+\newblock The self-programming thermostat: optimizing setback schedules based
+  on home occupancy patterns.
+\newblock 67--72.
+
+\bibitem[\protect\citeauthoryear{Haykin and Network}{Haykin and
+  Network}{2004}]{haykin2004compreh}
+{\sc Haykin, S.} {\sc and} {\sc Network, N.} 2004.
+\newblock A comprehensive foundation.
+\newblock {\em Neural Networks\/}.
+
+\bibitem[\protect\citeauthoryear{Heath}{Heath}{2010}]{heath2010sci}
+{\sc Heath, Michael T.~/Munson, E.~M.} 2010.
+\newblock {\em Scientific Computing: An Introductory Survey}.
+\newblock McGraw-Hill Higher Education.
+
+\bibitem[\protect\citeauthoryear{Hecht-Nielsen}{Hecht-Nielsen}{1988}]{hecht1988backprop}
+{\sc Hecht-Nielsen, R.} 1988.
+\newblock Theory of the backpropagation neural network.
+\newblock {\em Neural Networks\/}~{\em 1,\/}~1, 65--93.
+
+\bibitem[\protect\citeauthoryear{Hobby, Shoshitaishvili, and Tucci}{Hobby
+  et~al\mbox{.}}{2012}]{hobby2012analysis}
+{\sc Hobby, J.~D.}, {\sc Shoshitaishvili, A.}, {\sc and} {\sc Tucci, G.~H.}
+  2012.
+\newblock Analysis and methodology to segregate residential electricity
+  consumption in different taxonomies.
+\newblock {\em IEEE Transactions on Smart Grid\/}~{\em 3,\/}~1, 217--224.
+
+\bibitem[\protect\citeauthoryear{Igel and H¨¹sken}{Igel and
+  H¨¹sken}{2003}]{igel2003empirical}
+{\sc Igel, C.} {\sc and} {\sc H¨¹sken, M.} 2003.
+\newblock Empirical evaluation of the improved rprop learning algorithms.
+\newblock {\em Neurocomputing\/}~{\em 50,\/}~1, 105--123.
+
+\bibitem[\protect\citeauthoryear{Lu, Sookoor, Srinivasan, Gao, Holben,
+  Stankovic, Field, and Whitehouse}{Lu et~al\mbox{.}}{2010a}]{Lu:SenSys10}
+{\sc Lu, J.}, {\sc Sookoor, T.}, {\sc Srinivasan, V.}, {\sc Gao, G.}, {\sc
+  Holben, B.}, {\sc Stankovic, J.}, {\sc Field, E.}, {\sc and} {\sc Whitehouse,
+  K.} 2010a.
+\newblock The smart thermostat: Using occupancy sensors to save energy in
+  homes.
+\newblock In {\em Proceedings of the 8th ACM Conference on Embedded Networked
+  Sensor Systems}. SenSys '10. ACM, New York, NY, USA, 211--224.
+
+\bibitem[\protect\citeauthoryear{Lu, Sookoor, Srinivasan, Gao, Holben,
+  Stankovic, Field, and Whitehouse}{Lu
+  et~al\mbox{.}}{2010b}]{lu2010smartthermostat}
+{\sc Lu, J.}, {\sc Sookoor, T.}, {\sc Srinivasan, V.}, {\sc Gao, G.}, {\sc
+  Holben, B.}, {\sc Stankovic, J.}, {\sc Field, E.}, {\sc and} {\sc Whitehouse,
+  K.} 2010b.
+\newblock The smart thermostat: using occupancy sensors to save energy in
+  homes.
+\newblock 211--224.
+
+\bibitem[\protect\citeauthoryear{Lu}{Lu}{2012}]{lu2012eval}
+{\sc Lu, N.} 2012.
+\newblock An evaluation of the hvac load potential for providing load balancing
+  service.
+\newblock {\em IEEE Transactions on Smart Grid\/}~{\em 3,\/}~3, 1263--1270.
+
+\bibitem[\protect\citeauthoryear{Mozer, Vidmar, Dodier, et~al\mbox{.}}{Mozer
+  et~al\mbox{.}}{1997}]{mozer1997neurothermostat}
+{\sc Mozer, M.~C.}, {\sc Vidmar, L.}, {\sc Dodier, R.~H.}, {\sc et~al\mbox{.}}
+  1997.
+\newblock The neurothermostat: Predictive optimal control of residential
+  heating systems.
+\newblock {\em Advances in Neural Information Processing Systems\/}, 953--959.
+
+\bibitem[\protect\citeauthoryear{Nguyen and Aiello}{Nguyen and
+  Aiello}{2013}]{Nguyen2013Energy}
+{\sc Nguyen, T.~A.} {\sc and} {\sc Aiello, M.} 2013.
+\newblock Energy intelligent buildings based on user activity: A survey.
+\newblock {\em Energy and Buildings\/}~{\em 56,\/}~1, 244¨C257.
+
+\bibitem[\protect\citeauthoryear{Puskorius, Feldkamp, and Davis}{Puskorius
+  et~al\mbox{.}}{1996}]{puskorius1996dynamic}
+{\sc Puskorius, G.~V.}, {\sc Feldkamp, L.~A.}, {\sc and} {\sc Davis, L.~I.}
+  1996.
+\newblock Dynamic neural network methods applied to on-vehicle idle speed
+  control.
+\newblock {\em Proceedings of the IEEE\/}~{\em 84,\/}~10, 1407--1420.
+
+\bibitem[\protect\citeauthoryear{Riedmiller and Braun}{Riedmiller and
+  Braun}{1993}]{riedmiller1993direct}
+{\sc Riedmiller, M.} {\sc and} {\sc Braun, H.} 1993.
+\newblock A direct adaptive method for faster backpropagation learning: the
+  rprop algorithm.
+\newblock In {\em IEEE International Conference on Neural Networks}. 586--591.
+
+\bibitem[\protect\citeauthoryear{Schmidhuber}{Schmidhuber}{2014}]{schmidhuber2014deep}
+{\sc Schmidhuber, J.} 2014.
+\newblock Deep learning in neural networks: An overview.
+\newblock {\em Neural Networks\/}~{\em 61}, 85--117.
+
+\bibitem[\protect\citeauthoryear{Scott, Bernheim~Brush, Krumm, Meyers, Hazas,
+  Hodges, and Villar}{Scott et~al\mbox{.}}{2011}]{scott2011ctrl}
+{\sc Scott, J.}, {\sc Bernheim~Brush, A.}, {\sc Krumm, J.}, {\sc Meyers, B.},
+  {\sc Hazas, M.}, {\sc Hodges, S.}, {\sc and} {\sc Villar, N.} 2011.
+\newblock Preheat: controlling home heating using occupancy prediction.
+\newblock 281--290.
+
+\bibitem[\protect\citeauthoryear{Thomas, Jahangiri, Wu, Cai, Zhao, Aliprantis,
+  and Tesfatsion}{Thomas et~al\mbox{.}}{2012}]{thomas2012intelligent}
+{\sc Thomas, A.~G.}, {\sc Jahangiri, P.}, {\sc Wu, D.}, {\sc Cai, C.}, {\sc
+  Zhao, H.}, {\sc Aliprantis, D.~C.}, {\sc and} {\sc Tesfatsion, L.} 2012.
+\newblock Intelligent residential air-conditioning system with smart-grid
+  functionality.
+\newblock {\em IEEE Transactions on Smart Grid\/}~{\em 3,\/}~4, 2240--2251.
+
+\bibitem[\protect\citeauthoryear{Werbos}{Werbos}{1990}]{werbos1990backprop}
+{\sc Werbos, P.~J.} 1990.
+\newblock Backpropagation through time: what it does and how to do it.
+\newblock {\em Proceedings of the IEEE\/}~{\em 78,\/}~10, 1550--1560.
+
+\bibitem[\protect\citeauthoryear{Wu, Ho, and Lee}{Wu
+  et~al\mbox{.}}{2004}]{travel}
+{\sc Wu, C.-H.}, {\sc Ho, J.-M.}, {\sc and} {\sc Lee, D.-T.} 2004.
+\newblock Travel-time prediction with support vector regression.
+\newblock {\em Intelligent Transportation Systems, IEEE Transactions on\/}~{\em
+  5,\/}~4, 276--281.
+
+\bibitem[\protect\citeauthoryear{Zhao, Qi, Wang, Vafai, Wang, Chen, and
+  Tan}{Zhao et~al\mbox{.}}{2016}]{zhao2016learning}
+{\sc Zhao, H.}, {\sc Qi, Z.}, {\sc Wang, S.}, {\sc Vafai, K.}, {\sc Wang, H.},
+  {\sc Chen, H.}, {\sc and} {\sc Tan, S. X.-D.} 2016.
+\newblock Learning-based occupancy behavior detection for smart buildings.
+\newblock In {\em Circuits and Systems (ISCAS), 2016 IEEE International
+  Symposium on}. IEEE, 954--957.
+
+\end{thebibliography}

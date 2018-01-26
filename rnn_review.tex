@@ -1,0 +1,159 @@
+\section{Review of recurrent neural networks}
+
+Learning based techniques such as neural networks, which is composed of
+multiple processing layers, can learn representations of data with
+multiple levels of abstraction. Deep learning techniques with consist
+of many layers recently have dramatically improve the state-of-the-art
+in speech recognition and image recognition~\cite{LeCun:2015dt}.
+
+% Behavioral modeling can be viewed as a supervised learning in neural
+% network. The main advantage of the neural networks is its wide
+% application for both linear and nonlinear systems.  The universal
+% approximation capability of feed-forward neural networks (FNN) has
+% been proved in \cite{hornik1989multilayer} to show that any Borel
+% measurable function can be approximated with any arbitrary accuracy by
+% an FNN using squashing activation functions. 
+
+% Specifically, let $\boldsymbol{u}=\{u_1,u_2,\cdots,u_p\}$ denote the
+% input $p\times1$ vector, $\boldsymbol{y}=\{y_1,y_2,\cdots,y_q\}$
+% denote the output $q\times1$ vector, a layer-wise structured FNN
+% without bias can be described as
+% \begin{align}
+%     \boldsymbol{a}_1&=\boldsymbol{f}_1(\boldsymbol{u}\boldsymbol{W}^{(\text{IN},1)}),\nonumber\\
+%     \boldsymbol{a}_2&=\boldsymbol{f}_2(\boldsymbol{a}_1\boldsymbol{W}^{(1,2)}),\cdots,\nonumber\\
+%     \boldsymbol{a}_i&=\boldsymbol{f}_{i}(\boldsymbol{a}_i\boldsymbol{W}^{(i-1,i)}),\cdots,\nonumber\\
+%     \boldsymbol{a}_k&=\boldsymbol{f}_k(\boldsymbol{a}_{k-1}\boldsymbol{W}^{(k-1,k)}),\nonumber\\
+%     \boldsymbol{y}&=\boldsymbol{a}_{k}\boldsymbol{W}^{(k,\text{OUT})}\label{eqn:fnn}
+% \end{align}
+% where activation function $\boldsymbol{f}$ is element-wise squashing
+% operator such as sigmoid or hyperbolic tangent function; vector
+% $\boldsymbol{a}_i$ is the intermediate activation result of each
+% layer; matrix $\boldsymbol{W}^{(\cdot,\cdot)}$ is the weighting matrix connecting
+% adjacent layers.  FNN with bias requires each activation result vector
+% $\boldsymbol{a}_i$ to be appended with a fixed unit value before it is
+% fed into next level of calculation, and dimension of
+% $\boldsymbol{W}^{(\cdot,\cdot)}$ also needs to be adjusted
+% accordingly.
+
+
+
+% \subsection{Review of  recurrent neural networks}
+
+Memoryless feed-forward neural networks does not work for the time domain models, which depend on the
+history of the inputs of the models instead of current inputs.
+Recurrent neural networks (RNN) has been
+proposed~\cite{rojas2013neural} to build time domain models.
+
+A recurrent neural network (RNN) is constructed by introducing
+internal status holders to a memory-less network so that it can deal
+with time-series data. The internal status holders store outputs of
+designated neurons and usually function as feedbacks into other
+neurons. The application of feedback enables RNNs to acquire
+time-dependent state representations, making them suitable devices for
+applications like time-dependent non-linear prediction, plant control,
+etc.\cite{haykin2004comprehensive}. There are many RNN structures
+proposed by varying the form of the recurrent
+feedbacks~\cite{haykin2004comprehensive,elman1990finding,puskorius1996dynamic}.
+%
+% Nonlinear
+% autoregressive with exogenous inputs (NARX) model
+% \cite{leontaritis1985input} uses history of system input and output as
+% feedback to the multilayer perception. The estimated system output has
+% the form of
+% \begin{align}
+%     \boldsymbol{\hat{y}}(n+1)=\boldsymbol{\varphi}\big(&\boldsymbol{y}(n),\boldsymbol{y}(n-1),\cdots,\boldsymbol{y}(n-q+1),\nonumber\\
+%                                                         &\boldsymbol{u}(n),\boldsymbol{u}(n-1),\cdots,\boldsymbol{u}(n-q+1)\big)
+% \end{align}
+% where $q$ denotes the order of the unknown system; $\boldsymbol{y}$
+% and $\boldsymbol{u}$ are respectively the system output and input;
+% $\boldsymbol{\hat{y}}$ denotes the estimated system output,
+% $\boldsymbol{\varphi}$ denotes the non-linear function approximated by
+% the NARX network. 
+% The second RNN model is the non-linear state space model (NLSS)
+% \cite{haykin2004comprehensive}, taking the following form:
+% \begin{align}
+%     \boldsymbol{x}(n+1)&=\boldsymbol{\varphi}\left(\boldsymbol{x}(n),\boldsymbol{u}(n)\right) \label{eqn:nlss-x}\\
+%     \boldsymbol{y}(n)&=\boldsymbol{Cx}(n) \label{eqn:nlss-y}
+% \end{align}
+% which essentially is the general nonlinear continuous-time dynamic
+% model useful for modern control theory to study the dynamic behavior.
+%
+In his work, we will focus on applying the Elman recurrent network
+architecture (ELNN)~\cite{elman1990finding}, which applies local
+recurrent feedback on each layer of neurons, which shows good
+performance for many time-series based learning (like voice
+recognition).
+%
+%Similar state space dynamic neural network (SSDNN) has been applied
+%to model non-linear microwave integrated circuits with acceptable errors using
+%both clean and noisy input data \cite{Cao:2006gy}. SSDNN introduces
+%feed-forward neural network into linear state space equation in form of
+%\begin{align}
+%    \boldsymbol{\dot{x}}(t)&=-\boldsymbol{x}(t)+\tau
+%    \boldsymbol{\varphi}(\boldsymbol{x}(t), \boldsymbol{u}(t))\\
+%    \boldsymbol{y}(t)&=\boldsymbol{Cx}(t)
+%\end{align}
+%to describe the transient behavior of non-linear circuits.  Recurrent
+%multilayer perceptron (RMLP)\cite{puskorius1996dynamic} has been proposed,
+%which uses recurrent feedback between layer groups in a more coarse-grained
+%sense.
+%
+% Thanks to the universal approximation capability of FNN, for a
+% non-linear system described in equation (\ref{eqn:nlss-x}) and
+% (\ref{eqn:nlss-y}), a well designed feed forward network is capable to
+% fit non-linear function $\boldsymbol{\varphi}$ to obtain desired error
+% level.
+
+\subsection{Review of recurrent neural network training}
+In theoretical aspect, training a neural network
+%with weights $\boldsymbol{W}$
+is equivalent to the optimization problem to minimize cost function.
+%(without bias connections, without regulation terms):
+%\begin{equation}
+%    \boldsymbol{J}\left(\boldsymbol{W}^{(\text{IN},1)},\boldsymbol{W}^{(1,2)},\cdots,\boldsymbol{W}^{(k,\text{OUT})}\right)
+%    =\sum_{j=1}^m\left\Vert\boldsymbol{y}_j-\boldsymbol{\hat{y}}_j\right\Vert
+%\end{equation}
+%where $\boldsymbol{\hat{y}}_i$ is neural network output which can be explicitly
+%written in a nested activation form
+%\begin{align}
+%    \boldsymbol{\hat{y}}=&
+%    \boldsymbol{f}_k(
+%    \boldsymbol{f}_{k-1}(
+%    \boldsymbol{f}_{k-2}(
+%    \cdots
+%    \boldsymbol{f}_2(
+%    \boldsymbol{f}_1(
+%    \boldsymbol{uW}^{(\text{IN},1)}
+%    )\boldsymbol{W}^{(1,2)}
+%    )\boldsymbol{W}^{(2,3)}
+%    \cdots
+%    )\nonumber\\
+%    &\boldsymbol{W}^{(k-2,k-1)}
+%    )\boldsymbol{W}^{(k-1,k)}
+%    )\boldsymbol{W}^{(k,\text{OUT})}
+%\end{align}
+Therefore the neural network training problem can be solved by
+applying existing optimization method such as gradient decent,
+Broyden-Fletcher-Goldfarb-Shanno (BFGS) algorithm
+\cite{michael1997scientific}, and the Quasi-Newton method on the cost
+function $\boldsymbol{J}$. In practice, algorithms with lower
+computational cost has been developed. Back-propagation algorithm is a
+widely-used algorithm and has been well studied
+\cite{hecht1989theory}. It
+% adaptive 
+collects errors in weighting matrices
+%$\boldsymbol{W}^{(\cdot,\cdot)}$
+in a backward propagation, after the errors of output vectors have
+been observed in each epoch. Based on the back-propagation algorithm,
+many improvements have been developed such as the resilient
+back-propagation (RProp) method \cite{riedmiller1993direct}, which is
+more adaptive approach, and a further improvement method: RPropMinus
+\cite{igel2003empirical}, which has an overall better performance in
+reducing average error in late training phase. The back-propagation
+algorithm family has also been extended to train recurrent neural
+networks. Back-propagation through time (BPTT)
+\cite{werbos1990backpropagation} unfolds every network activation of a
+continuous sequence. Back-propagation through structure (BPTS)
+\cite{goller1996learning} delivers more computational efficiency on
+arbitrary structured networks.
+% vim: set ft=tex:

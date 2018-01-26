@@ -1,0 +1,82 @@
+\section{Review of Machine Learning Methods}
+\label{sec:machine_learning_review}
+This section briefly introduces some basic concepts of machine learning methods like support vector regression and recurrent neural network. Some specific tweaks in applying those methods in the model are also illustrated herein.
+
+\subsection{Review of Support Vector Regression}
+The elemental idea of the regression is to seek out a function that can accurately detect future values and the generic SVR estimating function is formed as
+\[
+f\left( x \right) =  {w \cdot \Gamma \left( x \right)}  + \lambda
+\label{eq:1}
+\]
+In the equation above, $w \in {R^n},$ $\lambda \in {R},$ and $\Gamma$ stands for a nonlinear transformation from $R^n$ to a high dimensional space. The transformation grants the power for a feature to be transferred into more complex dimension. Our objective is to find a value of $w$ and $\lambda$ such that the value of $x$ can be resolved via minimization of the regression risk
+\[
+%{R_{reg}}\left( f \right) = C\sum\limits_{i = 0}^l {\Gamma \left( {f\left( {{x_i}} \right) - {y_i}} \right) + \frac{1}{2}{{\left\| w \right\|}^2}}
+{R_{reg}}\left( f \right) = C\sum\limits_{i = 0}^l {{G _i} + \frac{1}{2}{{\left\| w \right\|}^2}}
+\label{eq:2}
+\]
+where ${G _i}$ is a loss function
+\[{G _i} = \left\{ {\begin{array}{*{20}{l}}
+{\left| {f\left( {{x_i}} \right) - {y_i}} \right| - \varepsilon ,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \left| {f\left( {{x_i}} \right) - {y_i}} \right| \ge \varepsilon }\\
+{0,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} otherwise}
+\end{array}} \right.\]
+Here $C$ is a constant, and $k\left( {{x_i},x} \right)$ is known as a kernel function. Through mathematical deduction \cite{travel}, the $\varepsilon {\rm{ - }}$insensitive loss function can be minimized as
+$$
+\resizebox{1\columnwidth}{!}{
+$\frac{1}{2}\sum\limits_{i,j = 1}^l {\left( {\alpha _i^* - {\alpha _i}} \right)\left( {\alpha _j^* - {\alpha _j}} \right)k\left( {{x_i},{x_j}} \right) - \sum\limits_{i = 1}^l {\alpha _i^*\left( {{y_i} - \varepsilon } \right)} }  - {\alpha _i}\left( {{y_i} + \varepsilon } \right)$}
+$$
+subject to
+$
+\label{eq:5}
+\sum\limits_{i = 1}^l {\left( {\alpha  - \alpha _i^*} \right) = 0,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \left( {{\alpha _i} - \alpha _i^*} \right) \in \left[ {0,C} \right]}
+$. Here ${\alpha _i}$ and $\alpha _i^*$ are Lagrange multipliers, which denote solutions to the quadratic problem.
+The constant $C$ decides penalties to estimation errors: When $C$ becomes larger, the penalties to errors become higher, thus the regression is trained to reduce the error with lower generalization. On the contrast, a small $C$ assigns lower penalties to errors, which results in a higher generalization model. If $C$ becomes infinitely large, SVR would not bear any errors and generates a complex model, whereas the model would tolerate a huge number of errors if $C$ is set to zero.
+The value of $w$ in accordance with the Lagrange multipliers is already acquired before we find the value of variable $\lambda$. Using KKT conditions $\lambda$, it can be calculated as follows
+\[\begin{array}{l}
+\lambda = {y_i} - \left( {w,{x_i}} \right) - \varepsilon {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} for{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\alpha _i} \in \left( {0,C} \right)\\
+\lambda= {y_i} - \left( {w,{x_i}} \right) + \varepsilon {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} for{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \alpha _i^* \in \left( {0,C} \right)
+\end{array}\]
+Putting it together enables us to apply SVR without knowing the concrete transformation. By adjusting parameters in SVR model, it is capable of accurately conducting detection on office occupancy.
+
+\subsection{Review of Recurrent Neural Network }
+Learning based techniques such as neural networks, which is composed of
+multiple processing layers, can learn representations of data with
+multiple levels of abstraction. Deep learning techniques with many layers recently
+have dramatically improved the state-of-the-art
+in speech recognition and image recognition~\cite{schmidhuber2014deep}.
+
+A recurrent neural network is constructed by introducing
+internal status holders to a memory-less network so that it can deal
+with time-series data. The internal status holders store outputs of
+designated neurons and usually function as feedbacks into other
+neurons. The application of feedback enables RNNs to acquire
+time-dependent state representations, making them suitable devices for
+applications like time-dependent non-linear prediction, plant control,
+etc.~\cite{haykin2004compreh}. There are many RNN structures
+proposed by varying the form of the recurrent
+feedbacks~~\cite{elman1990finding,haykin2004compreh,puskorius1996dynamic}.
+
+We apply the Elman recurrent neural network architecture as shown in
+Fig.~\ref{fig:elman} to the occupancy of each room in a certain smart building.
+We describe the structure Elman architecture, how the gold-referencing data is
+computed, and the detailed works on training the networks. We construct Elman recurrent neural network architecture (as shown in Fig.~\ref{fig:elman}) to build the black-box model for occupancy detection. In
+our work the size (number of neurons) of hidden layers are assigned according
+to empirical equation $N_{1,\ldots,k-1}=\frac15p+5$ and $N_k=2q$, where $N_i$
+is the size of $i$th layer, $p$ and $q$ are respectively the number of network
+inputs and outputs. We will focus on applying the Elman recurrent network
+architecture (ELNN)~\cite{elman1990finding}, which applies local
+recurrent feedback on each layer of neurons, which shows good
+performance for many time-series based learning (like voice
+recognition).
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{figs/rnn/elman}
+    \caption{Architecture of Elman Recurrent Neural Network}
+    \label{fig:elman}
+\end{figure}
+
+
+In theoretical aspect, training a neural network is equivalent to the optimization problem to minimize cost function. Therefore the neural network training problem can be solved by applying existing optimization method such as gradient decent, Broyden-Fletcher-Goldfarb-Shanno (BFGS) algorithm
+\cite{heath2010sci}, and the Quasi-Newton method on the cost function. In practice, algorithms with lower computational cost has been developed. Back-propagation algorithm is a widely-used algorithm and has been well studied \cite{hecht1988backprop}. It collects errors in weighting matrices in a backward propagation, after the errors of output vectors have been observed in each epoch. Based on the back-propagation algorithm, many improvements have been developed such as the resilient back-propagation (RProp) method \cite{riedmiller1993direct}, which is more adaptive approach, and a further improvement method: RPropMinus \cite{igel2003empirical}, which has an overall better performance in reducing average error in late training phase. The back-propagation algorithm family has also been extended to train recurrent neural networks. Back-propagation through time (BPTT) \cite{werbos1990backprop} unfolds every network activation of a
+continuous sequence. Back-propagation through structure delivers more computational efficiency on
+arbitrary structured networks.
