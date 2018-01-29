@@ -1,0 +1,151 @@
+Reviewer(s)' Comments to Author:
+
+Referee: 1
+
+Comments to the Author
+This paper presents a approach to detect the occupancy behavior of a building
+through the temperature and/or possible heat source information. The building
+simulation software EnergyPlus is used to generate temperature traces of rooms
+under given various time-series, such as ambient temperature, and HVAC inputs.
+And SVR and RNN are used to detect human occupancy of a smart building,
+respectively. However, this paper has limited innovation in both technique and
+results. There are two main comments or concerns from the reviewer.
+
+== Why RNN and SVR can be used to detect the occupancy behavior in this paper?
+In other words, why not use other machine learning methods and other optimal
+methods? Authors should give further explanations in terms of theory and
+experiments.
+
+Answered by Hengyang Zhao:
+SVR and RNN methods are widely used in non-linear regression applications
+because of their good interpolation performance. Especially, an RNN is able to
+efficiently capture frequency-domain characteristics in its recurrent
+neurons, modeling a non-linear dynamic system underlying, which is an
+advantage of being awareness of daily, weekly and seasonal occupation
+patterns. (Added to the intro section)
+
+(Needs more explaination of SVR here)
+
+== Authors should give some comparisons with other works in experiments, such
+as:
+[1] Dong, Bing, and Khee Poh Lam. "A real-time model predictive control for
+building heating and cooling systems based on the occupancy behavior pattern
+detection and local weather forecasting." Building Simulation. Vol. 7. No. 1.
+Springer Berlin Heidelberg, 2014.
+[2] Majumdar, Abhinandan, et al. "Energy-comfort optimization using discomfort
+history and probabilistic occupancy prediction." Green Computing Conference
+(IGCC), 2014 International. IEEE, 2014.
+[3] Yang, Junjing, Mattheos Santamouris, and Siew Eang Lee. "Review of
+occupancy sensing systems and occupancy modeling methodologies for the
+application in institutional buildings." Energy and Buildings 121 (2016):
+344-349.
+I cannot list all works about occupancy detection. Authors should give
+sufficient survey for related works.
+
+In addition, there are other several comments or concerns about this paper.
+
+== In page 2, 21 line, what is "IT"?
+== In page 2, 24 line, why "buildings utilizing programmable thermostats
+virtually are more likely to consume more energies than ones without using
+smart devices"? Reviewer cannot find the same opinion in Ref [Bias and Cheng
+1999]".
+== Typo in page 3, 50 line, provide -> provides. Please carefully proofread the
+whole paper.
+== What is x in page 5, 45 line; What is l in page 5, 54 line; What is y in
+page 6, 9 line. Please give definitions for all variables.
+== Syntax error in page 6, line 52-53: "We apply the Elman recurrent neural
+network architecture as shown in Fig. 4 to the occupancy of each room in a
+certain smart building.". Please carefully proofread the whole paper.
+== In Tab I and Tab II, authors use absolute error to evaluate estimation
+performance. However, authors should give real-value of occupancy. Why not use
+relative error to evaluate that? It seems be more reasonable.
+== How to determine constant C in SVR.
+
+
+Referee: 2
+
+Comments to the Author
+This paper uses SVR and RNN to predict the occupation (i.e., the number of
+people in a room). The proposed technique can be provided to smart buildings to
+optimally control the HVAC system. A smart building can shut down the HVAC
+system for empty rooms. It can save 28% electricity energy according to the
+previous research. The proposed method is demonstrated based on the simulation
+results by EnergyPlus. This reviewer would like to bring up the following
+comments.
+
+1. Comparing the SVR and RNN models, different features are used. For SVR, the
+features include solar angle, light energy, outdoor temperature, indoor
+temperature and working time. For RNN, other ambient factors and HVAC power are
+used. Why do the authors use different features here? Ideally, the same
+features should be used for different models in order to make a fare
+comparison.
+
+2. The authors claim that the SVR model is more stable if the features are
+changed. The definition of "changing features" is not clear. Please clarify.
+
+3. The authors discuss the accuracy and characteristics based on Figure 16.
+However, it is very hard to observe any difference between the curves generated
+from SVR, RNN and EnergyPlus.
+
+4. The training and testing data are generated from EnergyPlus by simulation
+other than physical measurement. The accuracy of EnergyPlus simulation cannot
+be guaranteed. Please discuss the pros and cons of such a simulation-based
+approach.
+
+There are several other minor issues.
+
+1. In the second paragraph of Introduction, the authors mention that 70% of the
+energy has been consumed by buildings according to the US department of energy.
+A citation is needed. In addition, a citation for EnergyPlus is needed as well.
+
+2. There is no label for the x-axis in Figures 10, 11, 12, 14 and 15.
+
+
+Referee: 3
+
+Comments to the Author
+In this model, we provide two sets of model which offers different extent of
+con- venience to detect number of employees in an office.
+
+I have no clue what the above sentence is trying to say.
+
+
+There are many more like this.
+
+
+Occupancy determination is highly studied in the literature. Authors don't seem
+to be aware of the variety of work done in the area.
+
+I don't know what the paper is about and what its novelty is.
+
+
+
+Referee: 4
+
+Comments to the Author
+A machine learning based method is proposed in this paper to detect the
+occupancy behavior of a building. The paper is well-organized and well-written.
+The rationale behind the method is reasonable and interesting.
+I list my main concerns as below.
+
+1. Related works are not completely reviewed. More related works should be
+introduced to draw a big picture for the readers.
+
+2. Extensive simulations have been carried out to validate the effectiveness of
+the proposed method, and many experimental results are shown in the paper.
+However, few result analyses are given in the paper to explain the reason why
+the proposed approach can achieve better performance.
+
+3. How to select the optimal parameters of SVR and RNN? It is well known that
+the performance of SVR and RNN heavily depends on parameter selection.
+
+4. The authors should clearly point out the major contributions of this paper
+by using 3 to 5 brief bullet points.
+
+
+5. You need to decrease the number of pages since there are some unnecessary
+explanations especially in the experimental parts. Suppose the readers are
+familiar with basic concepts.
+
+Overall, I think the extension has enough material to be considered for
+publication in TODAES.
