@@ -21,7 +21,7 @@ SVR and RNN methods are widely used in non-linear regression applications
 because of their good interpolation performance. Especially, an RNN is able to
 efficiently capture frequency-domain characteristics in its recurrent
 neurons, modeling a non-linear dynamic system underlying, which is an
-advantage of being awareness of daily, weekly and seasonal occupation
+advantage of being awareness of daily, weekly, and seasonal occupation
 patterns. (Added to the intro section)
 
 (Needs more explaination of SVR here)
