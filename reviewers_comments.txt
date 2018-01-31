@@ -99,7 +99,9 @@ energy has been consumed by buildings according to the US department of energy.
 A citation is needed. In addition, a citation for EnergyPlus is needed as well.
 
 2. There is no label for the x-axis in Figures 10, 11, 12, 14 and 15.
-
+Answered by Hengyang Zhao:
+Fixed. In the captions, we added descriptions for x-axis range, unit, and
+sample period.
 
 Referee: 3
 
