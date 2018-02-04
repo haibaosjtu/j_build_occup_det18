@@ -98,6 +98,12 @@ There are several other minor issues.
 energy has been consumed by buildings according to the US department of energy.
 A citation is needed. In addition, a citation for EnergyPlus is needed as well.
 
+Answered by Hengyang Zhao:
+A Dept Energy citation was added to support the 70% consumption percentage.
+URL (doesn't appear in the paper due to the formatting):
+https://www.eia.gov/totalenergy/data/annual/index.php#consumption
+An EnergyPlus public paper was added for the EnergyPlus software.
+
 2. There is no label for the x-axis in Figures 10, 11, 12, 14 and 15.
 Answered by Hengyang Zhao:
 Fixed. In the captions, we added descriptions for x-axis range, unit, and
