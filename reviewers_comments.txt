@@ -147,6 +147,14 @@ the proposed approach can achieve better performance.
 3. How to select the optimal parameters of SVR and RNN? It is well known that
 the performance of SVR and RNN heavily depends on parameter selection.
 
+Answered by Hengyang Zhao:
+We revised section "feature selection" under "proposed occupancy estimation
+approaches". All the five thermal-related features should be used in order to
+achieve the highest detection accuracy. However, it is sometimes not practical
+to acquire all the information, such as the lighting energy, as described.  In
+such situation, we can observe a detection accuracy degradation, as described
+in the experiment result section.
+
 4. The authors should clearly point out the major contributions of this paper
 by using 3 to 5 brief bullet points.
 
