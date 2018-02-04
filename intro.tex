@@ -122,32 +122,34 @@ methods are widely used in non-linear regression applications because of their
 good interpolation performance. Especially, an RNN efficiently is able to
 capture frequency-domain characteristics in its recurrent neurons, modeling a
 non-linear dynamic system underlying, which is an advantage of being awareness
-of daily, weekly and seasonal occupation patterns.
-The new approach is based on a machine
-learning approach in which a recurrent neutral network is trained to detect the
-number of people in a room based on the room temperature, ambient temperature,
-and other related heat sources. The experiments are performed by using a
-realistic building simulation program, EnergyPlus \cite{energyplus:2001vf}, from Department of Energy,
-which can model the various time-series inputs to a building such as ambient
-temperature, heating, ventilation, and air-conditioning inputs, power
-consumption of electronic equipment, lighting and number of occupants in a room
-sampled in each hour and produce resulting temperature traces of zones (rooms).
-Experimental results with SVR method show that 4-feature model provides
-accurate detection rate giving a 0.638 average error and 0.0532 error ratio,
-and 5-feature model gives a 0.317 average error and 0.0264 error ratio. This
-indicates that SVR is a viable option for occupancy detection.  In RNN method,
-we apply the Elman's recurrent neural network, which has local feedbacks in
-each layer. We use a simple formula to calculate the RNN layer number, layer
-size to configure RNN architecture to avoid overfitting and underfitting
-problems. The error level, in terms of number of people can be as low as 0.0056
-on average and 0.288 at maximum considering ambient, room temperatures and HVAC
-powers as detectable information. Without knowing HVAC powers, the estimation
-error can still be 0.044 on average, and only 0.71\% estimated points have
-errors greater than 0.5. Our study further shows both methods can deliver
-similar accuracy in the occupancy detection.  But that SVR model is more stable
-for changing features of the system, while the RNN method can deliver more
-accuracy when the features used in the model do not change a lot.
-
+of daily, weekly and seasonal occupation patterns.  The new approach is based
+on a machine learning approach in which a recurrent neutral network is trained
+to detect the number of people in a room based on the room temperature, ambient
+temperature, and other related heat sources. The experiments are performed by
+using a realistic building simulation program, EnergyPlus
+\cite{energyplus:2001vf}, from Department of Energy, which can model the
+various time-series inputs to a building such as ambient temperature, heating,
+ventilation, and air-conditioning inputs, power consumption of electronic
+equipment, lighting and number of occupants in a room sampled in each hour and
+produce resulting temperature traces of zones (rooms).  Experimental results
+with SVR method show that 4-feature model provides accurate detection rate
+giving a 0.638 average error and 0.0532 error ratio, and 5-feature model gives
+a 0.317 average error and 0.0264 error ratio. This indicates that SVR is a
+viable option for occupancy detection.  In RNN method, we apply the Elman's
+recurrent neural network, which has local feedbacks in each layer. We use a
+simple formula to calculate the RNN layer number, layer size to configure RNN
+architecture to avoid overfitting and underfitting problems. The error level,
+in terms of number of people can be as low as 0.0056 on average and 0.288 at
+maximum considering ambient, room temperatures and HVAC powers as detectable
+information. Without knowing HVAC powers, the estimation error can still be
+0.044 on average, and only 0.71\% estimated points have errors greater than
+0.5. Our study further shows both methods can deliver similar accuracy in the
+occupancy detection.  But that SVR model is more stable for changing features
+of the system, while the RNN method can deliver more accuracy when the features
+used in the model do not change a lot.  Comparing to first-principle based
+methods SVR and RNN methods work in a black-box way, which eliminates the
+efforts of explicitly building model of occupancy detection, in the mean time
+they can still achieve good detection accuracy.
 
 The rest of this paper is organized as the following.
 Section~\ref{sec:energy_plus_review} reviews the EnergyPlus program used for

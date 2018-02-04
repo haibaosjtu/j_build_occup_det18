@@ -144,6 +144,16 @@ the proposed method, and many experimental results are shown in the paper.
 However, few result analyses are given in the paper to explain the reason why
 the proposed approach can achieve better performance.
 
+Answered by Hengyang Zhao:
+Comparing to the referencing result, the occupation detection performance is
+satisfactory, in terms of the detection accuracy. It is superior than others
+in the following aspects: 1) No explicit requirement of body-detection
+devices, such as infrared detector, which reduces the deployment effort and
+cost; 2) Machine learning methods are black-boxed which do not require
+explicit modeling.
+
+Introduction section was revised to reflect the points mentioned above.
+
 3. How to select the optimal parameters of SVR and RNN? It is well known that
 the performance of SVR and RNN heavily depends on parameter selection.
 
