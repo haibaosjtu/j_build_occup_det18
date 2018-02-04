@@ -92,6 +92,15 @@ other than physical measurement. The accuracy of EnergyPlus simulation cannot
 be guaranteed. Please discuss the pros and cons of such a simulation-based
 approach.
 
+Answered by Hengyang Zhao:
+EnergyPlus has been proven as a successful energy simulation program with
+widely-accepted accuracy for modern buildings (two citations added to the
+paper).  Instead of conducting real building experiments, using EnergyPlus to
+test and simulate the proposed models is therefore valid, with a state of art
+simulation accuracy, which was a major pain point in the past. On the other
+hand, using EnergyPlus allows the authors to efficiently choose from a variety
+of buildings to test on, as well as easily configure the energy inputs.
+
 There are several other minor issues.
 
 1. In the second paragraph of Introduction, the authors mention that 70% of the
@@ -102,7 +111,7 @@ Answered by Hengyang Zhao:
 A Dept Energy citation was added to support the 70% consumption percentage.
 URL (doesn't appear in the paper due to the formatting):
 https://www.eia.gov/totalenergy/data/annual/index.php#consumption
-An EnergyPlus public paper was added for the EnergyPlus software.
+An EnergyPlus citation was added for the EnergyPlus software.
 
 2. There is no label for the x-axis in Figures 10, 11, 12, 14 and 15.
 Answered by Hengyang Zhao:
