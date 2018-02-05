@@ -42,6 +42,11 @@ application in institutional buildings." Energy and Buildings 121 (2016):
 I cannot list all works about occupancy detection. Authors should give
 sufficient survey for related works.
 
+Answered by Hengyang Zhao:
+
+We do have a list of reviews of existing works. We added four more citations
+of related works in the paper.
+
 In addition, there are other several comments or concerns about this paper.
 
 == In page 2, 21 line, what is "IT"?

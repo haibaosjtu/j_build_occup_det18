@@ -16,34 +16,40 @@ systems have been developed in different approaches
 \cite{thomas2012intelligent}\cite{lu2012eval}, and plenty of techniques are
 applied in the course of building the system.
 
-Detecting the occupancy ( i.e. whether there are residents) in a
-building or a room has applications ranging from energy reduction
-to security monitoring. For instance, occupancy detection is critical for energy and comfort
-management system in a smart building~\cite{Nguyen2013Energy}.  Using
-the occupancy information, HVAC and lighting can be automatically
-controlled to reduce energy consumption while keeping human comfort.
-Previous research shows that energy can be saved by 28\% by
-automatically sensing occupancy and turning off HVAC when the building
-is not occupied~\cite{Lu:SenSys10}.
+Detecting the occupancy ( i.e. whether there are residents) in a building or a
+room has applications ranging from energy reduction to security monitoring. For
+instance, occupancy detection is critical for energy and comfort management
+system in a smart building~\cite{Nguyen2013Energy}.  Using the occupancy
+information, HVAC and lighting can be automatically controlled to reduce energy
+consumption while keeping human comfort. Energy consumption optimization can
+achieve higher quality with knowledge of current building occupancy
+\cite{majumdar2014energy}. Previous research shows that energy
+can be saved by 28\% by automatically sensing occupancy and turning off HVAC
+when the building is not occupied~\cite{Lu:SenSys10}.
 
-Due to the importance of detecting building occupancy, many methods
-have been proposed in the past. The most widely used method is by
-means of motion detection (using different techniques such infrared,
-RF, sounds, vibrations magnetism etc), which can detect if there is
-person or not. But motion detection in general can not tell how many
-persons in a room.  Other methods include passive infrared
-sensors~\cite{Dodier2006Building}, wireless camera sensor network
-\cite{erickson2009energy}, and applying sound level, case temperature,
-carbon-dioxide (CO2) and motion to estimate occupancy
+Due to the importance of detecting building occupancy, many methods have been
+proposed in the past. The most widely used method is by means of motion
+detection (using different techniques such infrared, RF, sounds, vibrations
+magnetism etc), which can detect if there is person or not. But motion
+detection in general can not tell how many persons in a room.  Other methods
+include passive infrared sensors~\cite{Dodier2006Building}, wireless camera
+sensor network \cite{erickson2009energy}, and applying sound level, case
+temperature, carbon-dioxide ($CO_2$) and motion to estimate occupancy
 number~\cite{Ekwevugbe2013Real}.  Preheat \cite{scott2011ctrl} built rooms with
-active radio frequency identification (RFID) and sensors to detect
-home occupancy. Mozer \cite{mozer1997neurothermostat} proposed a neural network method by
-using the history data from embedded motion sensors and actives RFID
-to explore occupancy rate. Thermostat \cite{lu2010smartthermostat} also devoted a
-similar approach through the employment of magnetic reed switches and
-passive infrared sensors to take control of the HVAC system at
-home. However, those methods are more expensive for deployment as
-dedicated equipment is required.
+active radio frequency identification (RFID) and sensors to detect home
+occupancy. Mozer \cite{mozer1997neurothermostat} proposed a neural network
+method by using the history data from embedded motion sensors and actives RFID
+to explore occupancy rate. Thermostat \cite{lu2010smartthermostat} also devoted
+a similar approach through the employment of magnetic reed switches and passive
+infrared sensors to take control of the HVAC system at home. However, those
+methods are more expensive for deployment as dedicated equipment is required.
+Artificial neural network (ANN) is applied in occupation detection works
+\cite{lam2009occupancy} in a feed-forward manner, not capturing periodical
+patterns as using a recurrent neural network. Other machine learning
+techniques, such as support vector machine (SVM) and hidden Markov model are
+also evaluated and 75\% estimation accuracy was achieved. The above works didn't
+take historical data into account, which is important in patterned (e.g.
+weekly, seasonal) occupancy prediction.
 
 One viable and cost-efficient  approach for the occupancy detection is to leverage
 existing temperature sensors or temperature sensor networks already
