@@ -140,7 +140,9 @@ to be aware of the variety of work done in the area.
 
 I don't know what the paper is about and what its novelty is.
 
-
+Answered by Hengyang Zhao:
+We have added a list at the end of introduction section to highlight our
+contribution and novelty.
 
 Referee: 4
 
@@ -182,6 +184,8 @@ in the experiment result section.
 4. The authors should clearly point out the major contributions of this paper
 by using 3 to 5 brief bullet points.
 
+Answered by Hengyang Zhao:
+We have added a list at the end of introduction section.
 
 5. You need to decrease the number of pages since there are some unnecessary
 explanations especially in the experimental parts. Suppose the readers are

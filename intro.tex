@@ -157,6 +157,23 @@ methods SVR and RNN methods work in a black-box way, which eliminates the
 efforts of explicitly building model of occupancy detection, in the mean time
 they can still achieve good detection accuracy.
 
+Our major contributions are listed as following:
+\begin{itemize}
+\item We use thermal system consistency to detect occupancy using other
+    thermal-related parameters acquired by existing sensors, which dramatically
+    reduces the deployment effort, such as elimination of the requirement
+    of infrared sensors.
+\item We apply machine learning techniques, such as deep recurrent neural
+    networks, to explore the possibility and accuracy of occupancy detection.
+    This does not require explicitly application-specific modeling.
+\item Two machine learning methods are throughly compared in terms of accuracy,
+    using different feature set, which highlights the importance of certain
+    significant featues, such as HVAC power consumption.
+\item We use dynamic machine learning models (e.g. recurrent neural network
+    instead of non-recurrent) such that periodical occupancy patterns can be taken
+    into account.
+\end{itemize}
+
 The rest of this paper is organized as the following.
 Section~\ref{sec:energy_plus_review} reviews the EnergyPlus program used for
 generating realistic building data. Section~\ref{sec:machine_learning_review}
