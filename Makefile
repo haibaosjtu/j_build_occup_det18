@@ -73,5 +73,5 @@ update:
 
 # clean all the temp files
 clean:
-	rm -f *.aux *.dvi *.ps *.log *~ *.pdf *.bak *.blg *.bbl core
+	rm -f $(PAPER).aux $(PAPER).dvi $(PAPER).ps $(PAPER).log $(PAPER).pdf $(PAPER).bak $(PAPER).blg $(PAPER).bbl core
 
