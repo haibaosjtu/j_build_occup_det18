@@ -24,7 +24,11 @@ neurons, modeling a non-linear dynamic system underlying, which is an
 advantage of being awareness of daily, weekly, and seasonal occupation
 patterns. (Added to the intro section)
 
-(Needs more explaination of SVR here)
+Answered by Qi Hua:
+In this paper we want to compare traditional machine learning algorithm vs
+deep learning technique. SVR is a traditional machine learning algorithm which
+is widely used as well. Therefore we chose SVR to make predictions and compare
+it with RNN.
 
 == Authors should give some comparisons with other works in experiments, such
 as:
@@ -66,6 +70,15 @@ performance. However, authors should give real-value of occupancy. Why not use
 relative error to evaluate that? It seems be more reasonable.
 == How to determine constant C in SVR.
 
+Answered by Qi Hua:
+
+IT means information technology, in the context it means energy management
+system with information technology. Buildings utilizing programmable
+thermostats virtually are more likely to consume more energies than ones
+without using smart devices because the smart devices often set off wrongly
+and causes unnecessary cost. We will proofread the whole paper and avoid
+making typo mistakes. Constant C in SVR is one of its hyper parameters, we
+used grid search to determine the value of it.
 
 Referee: 2
 
@@ -85,12 +98,27 @@ used. Why do the authors use different features here? Ideally, the same
 features should be used for different models in order to make a fare
 comparison.
 
+Answered by Qi Hua:
+
+It is a written mistake. We do use the same feature set.
+
 2. The authors claim that the SVR model is more stable if the features are
 changed. The definition of "changing features" is not clear. Please clarify.
+
+Answered by Qi Hua:
+
+Changing features means to add or delete one feature in the feature pool. SVR
+performs a little more stably from the experiment result.
 
 3. The authors discuss the accuracy and characteristics based on Figure 16.
 However, it is very hard to observe any difference between the curves generated
 from SVR, RNN and EnergyPlus.
+
+Answered by Qi Hua:
+
+We made our conclusion not only from figure but also from statistics we get
+from experiments. It is a result from observation of figure as well as
+calculation from statistics.
 
 4. The training and testing data are generated from EnergyPlus by simulation
 other than physical measurement. The accuracy of EnergyPlus simulation cannot
@@ -191,5 +219,11 @@ We have added a list at the end of introduction section.
 explanations especially in the experimental parts. Suppose the readers are
 familiar with basic concepts.
 
+Answered by Qi Hua:
+We will delete redundant explanations in the paper.
+
+
 Overall, I think the extension has enough material to be considered for
 publication in TODAES.
+
+
