@@ -49,7 +49,12 @@ sufficient survey for related works.
 Answered by Hengyang Zhao:
 
 We do have a list of reviews of existing works. We added four more citations
-of related works in the paper.
+of related works in the paper. For work [1], it uses CO2, motion, and
+acoustics to detect occupancy and achieves 92% accuracy. Work [2] uses
+CO2 and motion sensors to build a probability model using 3-month data, which
+was used in energy-comfort optimization. The authors of [2] didn't provide
+occupancy detection precision. Works mentions [3] have one major
+disadvantage (mentioned in [3]/Table2): multiple sensor network needed.
 
 In addition, there are other several comments or concerns about this paper.
 
