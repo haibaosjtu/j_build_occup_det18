@@ -55,6 +55,8 @@ CO2 and motion sensors to build a probability model using 3-month data, which
 was used in energy-comfort optimization. The authors of [2] didn't provide
 occupancy detection precision. Works mentions [3] have one major
 disadvantage (mentioned in [3]/Table2): multiple sensor network needed.
+Comparing to work [1], which provided accuracy data (92%), our RNN method can
+achieve higher than 99% accuracy using two or more hidden recurrent layers.
 
 In addition, there are other several comments or concerns about this paper.
 
