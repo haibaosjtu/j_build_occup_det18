@@ -35,9 +35,9 @@ y_pos = np.arange(len(objects))
 
 plt.figure(figsize=(9, 2)).subplots_adjust(left=0.06, right=0.94, top=0.92, bottom=0.18)
 
-plt.grid(linestyle='--', alpha=0.5, color='black')
+plt.grid(linestyle='--', color='gray', zorder=0)
 
-bar_list = plt.bar(y_pos, heights, align='center', width=0.5)
+bar_list = plt.bar(y_pos, heights, align='center', width=0.5, zorder=10)
 
 for bar, accu in zip(bar_list, accuracy):
     bar.set_color(accu[2])
