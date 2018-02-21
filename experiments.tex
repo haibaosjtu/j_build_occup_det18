@@ -6,37 +6,37 @@ the proposed SVR model and discuss the effectiveness of applying
 different number of features in this model.
 
 \subsubsection{Experiments}
+
 \begin{table}[!h]
+\centering
+    \begin{tabular}{lrrcrrcrr}
+        \toprule
+            & \multicolumn{2}{c}{$C=100$} && \multicolumn{2}{c}{$C=500$} && \multicolumn{2}{c}{$C=1000$} \\
+        \cmidrule{2-3} \cmidrule{5-6} \cmidrule{8-9}
+        \#Features &   \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} && \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} && \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5}  \\
+        \midrule
+        Avg. error&0.721& 0.310   && 0.576 &  0.326   &&  0.550  &  0.348        \\
+        Error~rate&31.1\%& 8.56\%  && 18.8\% &  8.89\%  &&  18.1\%  &  12.4\%        \\
+        \bottomrule
+    \end{tabular}
 \label{table:training}
 \caption{Training error statistics of SVR model using different numbers of features.}
-\centering
-\begin{tabular}{m{1.2cm}m{0.8cm}m{0.8cm}m{0.8cm}m{0.8cm}m{0.8cm}m{0.8cm}}
-\hline
-& \multicolumn{2}{c}{$C$=100} & \multicolumn{2}{c}{$C$=500} & \multicolumn{2}{c}{$C$=1000} \\
-\cline{2-7}
-Features &   \hspace{0.2cm} 4  &\hspace{0.2cm}   5  &\hspace{0.2cm}   4  &\hspace{0.2cm}   5  &\hspace{0.2cm}   4  & \hspace{0.2cm}  5  \\
-\hline
-Avg. error&0.721& 0.310   & 0.576 &  0.326   &  0.550  &  0.348        \\
-Err. ratio&0.311& 0.0856  & 0.188 &  0.0889  &  0.181  &  0.124        \\
-\hline
-\end{tabular}
 \end{table}
 
-
 \begin{table}[!h]
-\label{table:testing}
-\caption{Validation error statistics of SVR model using different numbers of features.}
-\centering
-\begin{tabular}{m{1.2cm}m{0.8cm}m{0.8cm}m{0.8cm}m{0.8cm}m{0.8cm}m{0.8cm}}
-\hline
-& \multicolumn{2}{c}{$C$=100} & \multicolumn{2}{c}{$C$=500} & \multicolumn{2}{c}{$C$=1000} \\
-\cline{2-7}
-Features &   \hspace{0.2cm} 4  &\hspace{0.2cm}   5  &\hspace{0.2cm}   4  &\hspace{0.2cm}   5  &\hspace{0.2cm}   4  & \hspace{0.2cm}  5  \\
-\hline
-Avg. error&0.819& 0.317   & 0.694 &  0.330   &  0.638  &  0.390        \\
-Err. ratio&0.068& 0.0264  & 0.0578 &  0.0274  &  0.0532  &  0.0325        \\
-\hline
-\end{tabular}
+    \centering
+    \begin{tabular}{lrrcrrcrr}
+        \toprule
+            & \multicolumn{2}{c}{$C=100$} && \multicolumn{2}{c}{$C=500$} && \multicolumn{2}{c}{$C=1000$} \\
+        \cmidrule{2-3} \cmidrule{5-6} \cmidrule{8-9}
+        \#Features &   \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} && \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} && \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5}  \\
+        \midrule
+        Avg.~error&0.819& 0.317   && 0.694  &  0.330   &&  0.638  &  0.390        \\
+        Error~rate&6.80\%& 2.64\%  && 5.78\% &  2.74\%  &&  5.32\%  &  3.25\%        \\
+        \bottomrule
+    \end{tabular}
+    \caption{Validation error statistics of SVR model using different numbers of features.}
+    \label{table:testing}
 \end{table}
 
 We evaluate the SVR detection model using
@@ -67,7 +67,7 @@ to 0.01 is a reliable choice for this SVR-based occupancy model. At
 each sample point, the estimation error ${e_i}$ is defined as
 ${e_i} = \left| {O_i^{SVR} - O_i^{EP}} \right|$ where $O_i^{SVR}$
 denotes the occupancy value obtained by the proposed SVR model and
-$O_i^{EP}$ denotes the real value of occupancy generated from EnergyPlus. We calculate the average error and the error ratio by
+$O_i^{EP}$ denotes the real value of occupancy generated from EnergyPlus. We calculate the average error and the error rate by
 $\frac{1}{n}\sum\nolimits_n {{e_i}}$ and
 $\frac{{Average{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt}
     error}}{{full{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt}
