@@ -1,8 +1,9 @@
 \section{Introduction}
 Building takes an instrumental role in energy consumption and smartness of a
-building has a large impact on inhabitants. According to statistics provided by
-US Department of Energy, more than 70\% of electricity has been consumed by
-buildings every year \cite{doe_annual}. Recent efforts have been poured into the awareness of
+building has a large impact on inhabitants. \textcolor{feb18rev}{According to
+statistics provided by US Department of Energy, more than 70\% of electricity
+has been consumed by buildings every year \cite{doe_annual}}. Recent efforts
+have been poured into the awareness of
 improving efficiency in quite a few facets, e.g., heating, ventilation, air
 conditioning (HVAC) system \cite{erickson2009energy}\cite{gao2009selfprog},
 lighting\cite{delaney2009eval}, IT energy consumption management within
@@ -43,13 +44,13 @@ to explore occupancy rate. Thermostat \cite{lu2010smartthermostat} also devoted
 a similar approach through the employment of magnetic reed switches and passive
 infrared sensors to take control of the HVAC system at home. However, those
 methods are more expensive for deployment as dedicated equipment is required.
-Artificial neural network (ANN) is applied in occupation detection works
+\textcolor{feb18rev}{Artificial neural network (ANN) is applied in occupation detection works
 \cite{lam2009occupancy} in a feed-forward manner, not capturing periodical
 patterns as using a recurrent neural network. Other machine learning
 techniques, such as support vector machine (SVM) and hidden Markov model are
 also evaluated and 75\% estimation accuracy was achieved. The above works didn't
 take historical data into account, which is important in patterned (e.g.
-weekly, seasonal) occupancy prediction.
+weekly, seasonal) occupancy prediction.}
 
 One viable and cost-efficient  approach for the occupancy detection is to leverage
 existing temperature sensors or temperature sensor networks already
@@ -132,12 +133,12 @@ of daily, weekly and seasonal occupation patterns.  The new approach is based
 on a machine learning approach in which a recurrent neutral network is trained
 to detect the number of people in a room based on the room temperature, ambient
 temperature, and other related heat sources. The experiments are performed by
-using a realistic building simulation program, EnergyPlus
+using a realistic building simulation program, \textcolor{feb18rev}{EnergyPlus
 \cite{energyplus:2001vf}, from Department of Energy, which can model the
 various time-series inputs to a building such as ambient temperature, heating,
 ventilation, and air-conditioning inputs, power consumption of electronic
 equipment, lighting and number of occupants in a room sampled in each hour and
-produce resulting temperature traces of zones (rooms).  Experimental results
+produce resulting temperature traces of zones (rooms).} Experimental results
 with SVR method show that 4-feature model provides accurate detection rate
 giving a 0.638 average error and 5.32\% error rate, and 5-feature model gives
 a 0.317 average error and 2.64\% error rate. This indicates that SVR is a
@@ -152,12 +153,13 @@ information. Without knowing HVAC powers, the estimation error can still be
 0.5. Our study further shows both methods can deliver similar accuracy in the
 occupancy detection.  But that SVR model is more stable for changing features
 of the system, while the RNN method can deliver more accuracy when the features
-used in the model do not change a lot.  Comparing to first-principle based
-methods SVR and RNN methods work in a black-box way, which eliminates the
-efforts of explicitly building model of occupancy detection, in the mean time
-they can still achieve good detection accuracy.
+used in the model do not change a lot.  \textcolor{feb18rev}{Comparing to
+first-principle based methods, SVR and RNN methods work in a black-box way,
+which reduces the efforts of explicitly building model of occupancy
+detection and sensor network deployment, while good detection accuracy can
+still be achieved, as shown in the result section.}
 
-Our major contributions are listed as following:
+\textcolor{feb18rev}{Our major contributions are listed as following:
 \begin{itemize}
 \item We use thermal system consistency to detect occupancy using other
     thermal-related parameters acquired by existing sensors, which dramatically
@@ -173,6 +175,7 @@ Our major contributions are listed as following:
     instead of non-recurrent) such that periodical occupancy patterns can be taken
     into account.
 \end{itemize}
+}
 
 The rest of this paper is organized as the following.
 Section~\ref{sec:energy_plus_review} reviews the EnergyPlus program used for

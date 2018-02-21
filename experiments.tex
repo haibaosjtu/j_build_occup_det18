@@ -35,7 +35,8 @@ different number of features in this model.
         Error~rate&6.80\%& 2.64\%  && 5.78\% &  2.74\%  &&  5.32\%  &  3.25\%        \\
         \bottomrule
     \end{tabular}
-    \caption{Validation error statistics of SVR model using different numbers of features.}
+    \caption{Validation error statistics of SVR model using different numbers
+    of features.}
     \label{table:testing}
 \end{table}
 
@@ -95,7 +96,9 @@ Table \rom{2} shows the validation error statistics of the proposed SVR model. T
 (b) 5 features.
 \end{minipage}
 \hfill
-\caption{Occupancy estimation accuracy when $C$ equals 100 using SVR with 4 features and 5 features. X-axis spans over 360 hours (15 days), sampled hourly.}\label{fig:compare1}
+\caption{Occupancy estimation accuracy when $C$ equals 100 using SVR with 4
+    features and 5 features. \textcolor{feb18rev}{X-axis spans over 360 hours (15 days), sampled
+    hourly.}}\label{fig:compare1}
 \end{figure}
 
 \begin{figure}[h]
@@ -114,7 +117,9 @@ Table \rom{2} shows the validation error statistics of the proposed SVR model. T
 (b) 5 features.
 \end{minipage}
 \hfill
-\caption{Occupancy estimation accuracy when $C$ equals 500 using SVR with 4 features and 5 features. X-axis spans over 360 hours (15 days), sampled hourly.}\label{fig:compare2}
+\caption{Occupancy estimation accuracy when $C$ equals 500 using SVR with 4
+    features and 5 features. \textcolor{feb18rev}{X-axis spans over 360 hours (15 days), sampled
+    hourly.}}\label{fig:compare2}
 \end{figure}
 
 \begin{figure}[h]
@@ -133,7 +138,9 @@ Table \rom{2} shows the validation error statistics of the proposed SVR model. T
 (b) 5 features.
 \end{minipage}
 \hfill
-\caption{Occupancy estimation accuracy when $C$ equals 1000 using SVR with 4 features and 5 features. X-axis spans over 360 hours (15 days), sampled hourly.}\label{fig:compare3}
+\caption{Occupancy estimation accuracy when $C$ equals 1000 using SVR with 4
+    features and 5 features. \textcolor{feb18rev}{X-axis spans over 360 hours (15 days), sampled
+    hourly.}}\label{fig:compare3}
 \end{figure}
 
 
@@ -269,7 +276,8 @@ Conf. II: Ambient factors, room temperatures and HVAC powers.
 \end{minipage}
 \hfill
     \caption{Occupancy estimation accuracy using one-layer recurrent neural
-    network with input configurations I and II. X-axis spans over 384 hours (16 days), sampled hourly.}\label{fig:one-layer}
+    network with input configurations I and II. \textcolor{feb18rev}{X-axis
+    spans over 384 hours (16 days), sampled hourly.}}\label{fig:one-layer}
 \end{figure}
 
 \begin{figure}[h]
@@ -290,8 +298,8 @@ Conf. II: Ambient factors, room temperatures and HVAC powers.
 \end{minipage}
 \hfill
 \caption{Occupancy estimation accuracy using two-layer recurrent neural network
-    with input configurations I and II. X-axis spans over 384 hours (16 days),
-    sampled hourly.}\label{fig:two-layer}
+    with input configurations I and II. \textcolor{feb18rev}{X-axis spans over
+    384 hours (16 days), sampled hourly.}}\label{fig:two-layer}
 \end{figure}
 
 
@@ -410,18 +418,19 @@ flexibility to apply for those two models. The SVR model is used when
 the features of a model will change from every now and then, in order
 to keep the detection precision at a stable range. The RNN model is applied
 when features are not changed in a real context, which possess a even higher
-precision in detecting occupancy compared to SVR. Comparing to 92\% detection
-accuracy in \cite {dong2014real}, as shown in figure
-\ref{fig:accuracy-comparison}, moderately configured SVR and RNN model can
-achieve occupancy detection accuracy higher than 96\%.
+precision in detecting occupancy compared to SVR.
+\textcolor{feb18rev}{Comparing to 92\% detection accuracy in \cite
+{dong2014real}, as shown in figure \ref{fig:accuracy-comparison}, moderately
+configured SVR and RNN model can achieve occupancy detection accuracy higher
+than 96\%.}
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{./figs/results/results_compare.eps}
-    \caption{Occupancy detection accuracy using SVR and RNN. (Explanation for
-    the X-axis labels: subscript and superscript of RNN denotes number of
-    hidden layers and awareness of HVAC; subscript and superscript of SVR
-    denotes number of features and $C$ value.)}
+    \caption{\textcolor{feb18rev}{Occupancy detection accuracy using SVR and
+    RNN. (Explanation for the X-axis labels: subscript and superscript of RNN
+    denotes number of hidden layers and awareness of HVAC; subscript and
+    superscript of SVR denotes number of features and $C$ value.)}}
     \label{fig:accuracy-comparison}
 \end{figure}
 
