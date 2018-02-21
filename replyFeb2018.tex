@@ -1,0 +1,293 @@
+\newpage
+\onecolumn
+
+\setcounter{page}{1} \pagenumbering{roman}
+
+\vskip 2pc
+
+\centerline{\LARGE \bf Summary of Revision}
+\centerline{\Large (paper id: No.
+TODAES-2017-P-1537)}
+
+\section{Summary}
+
+First, we would like to thank the Editor in Chief and associate
+editor and the four referees for their careful reviews of our
+manuscript, suggestions and comments that help further improve the
+presentation of our work.  A revision of the paper has been
+completed, all the review comments have been addressed and we hope
+the revised paper will resolve all the concerns of the reviewers.
+
+Before we reply the questions of each reviewer, we would like to
+highlight the following major modifications:
+
+\begin{itemlist}
+
+\item The main concern of the manuscript has been addressed in the
+introduction section and more citations have been added.
+
+\item Some figures have been updated\/ regenerated and the more
+discussions about comparisons with existing works have been added in
+the introduction section and the numerical experiment section.
+
+\item All the mentioned presentation issues have been addressed.
+
+\end{itemlist}
+
+Below, we will answer the questions raised by each reviewer. For the
+completeness, the original comments are {\it quoted} first, followed
+by a short explanation of how the comments have been addressed.
+
+
+\vspace{0.2in}
+
+
+\section{Answer to reviewers' comments}
+
+\subsection{Answers to Reviewer 1's comments}
+\begin{verbatim}
+(1) This paper presents a approach to detect the occupancy behavior
+of a building through the temperature and/or possible heat source
+information. The building simulation software EnergyPlus is used
+to generate temperature traces of rooms under given various
+time-series, such as ambient temperature, and HVAC inputs.
+And SVR and RNN are used to detect human occupancy of a smart
+building, respectively. However, this paper has limited innovation
+in both technique and results. There are two main comments or
+concerns from the reviewer. Why RNN and SVR can be used to detect
+the occupancy behavior in this paper? In other words, why not use
+other machine learning methods and other optimal methods?
+Authors should give further explanations in terms of theory and
+experiments.
+\end{verbatim}
+
+Answer: Thanks for your comments. SVR and RNN methods are widely used in non-linear regression applications because of their good interpolation performance. Therefore, RNN and SVR can be used to detect the occupancy behavior. Especially, an RNN is able to efficiently capture frequency-domain characteristics in its recurrent neurons, modeling a non-linear dynamic system underlying, which is an advantage of being awareness of daily, weekly, and seasonal occupation patterns. In this paper we want to address the comparison between traditional machine learning algorithm with deep learning technique. SVR is a traditional machine learning algorithm which is widely used as well. It should be also noted that other machine learning method such as the traditional back propagation (BP) neural network algorithm can be used for occupancy detection for smart buildings. Actually we did the experiments by using the BP neural network and found that this method can also be applied for detecting human occupancy (details are omitted because of limited space). We have addressed this in the introduction section of the revised manuscript.
+
+\begin{verbatim}
+(2) Authors should give some comparisons with other works in
+experiments, such as:
+
+[1] Dong, Bing, and Khee Poh Lam. "A real-time model
+predictive control for building heating and cooling systems based
+on the occupancy behavior pattern detection and local weather
+forecasting." Building Simulation. Vol. 7. No. 1. Springer
+Berlin Heidelberg, 2014.
+
+[2] Majumdar, Abhinandan, et al. "Energy-comfort optimization
+using discomfort history and probabilistic occupancy prediction."
+Green Computing Conference (IGCC), 2014 International. IEEE, 2014.
+
+[3] Yang, Junjing, Mattheos Santamouris, and Siew Eang Lee. "Review
+of occupancy sensing systems and occupancy modeling methodologies
+for the application in institutional buildings." Energy and
+Buildings 121 (2016): 344-349.
+
+I cannot list all works about occupancy detection. Authors should
+give sufficient survey for related works.
+\end{verbatim}
+
+Answer:
+Thanks for pointing this out. Some more existing works have been reviewed and some more citations of related works have been added, please see the introduction section of the revised revision. For the work [1] mentioned by the reviewer, it uses CO$_2$, motion, and acoustics to detect occupancy and achieves 92\% accuracy. The work [2] uses CO$_2$ and motion sensors to build a probability model using 3-month data, which was used in energy-comfort optimization. The authors of [2] didn't provide occupancy detection precision. The work [3] have one major disadvantage (mentioned in [3]/Table2): multiple sensor network needed. Different from these methods, we build a machine learning model for occupancy detection by carefully selecting some features including solar angle, indoor temperatures, outdoor temperatures, working time, and lights energy. Comparing to the work [1], which provided accuracy data (92\%), our RNN method can achieve higher than 99\% accuracy using two or more hidden recurrent layers.
+
+\begin{verbatim}
+(3) In addition, there are other several comments or concerns about
+this paper. In page 2, 21 line, what is "IT"?
+\end{verbatim}
+Answer: IT means information technology. In the paper it means energy management system with information technology. We have added the explanation in Section ??? of the revised manuscript.
+
+\begin{verbatim}
+(4) In page 2, 24 line, why "buildings utilizing programmable
+thermostats virtually are more likely to consume more energies
+than ones without using smart devices"? Reviewer cannot find
+the same opinion in Ref [Bias and Cheng1999]".
+\end{verbatim}
+Answer: Buildings utilizing programmable
+thermostats virtually are more likely to consume more energies than ones
+without using smart devices because the smart devices often set off wrongly
+and causes unnecessary cost.
+
+\begin{verbatim}
+(5) Typo in page 3, 50 line, provide -> provides. Please
+carefully proofread the whole paper.
+
+What is x in page 5, 45 line; What is l in page 5, 54 line;
+What is y in page 6, 9 line. Please give definitions for
+all variables.
+
+Syntax error in page 6, line 52-53: "We apply the Elman
+recurrent neural network architecture as shown in Fig. 4 to
+the occupancy of each room in a certain smart building.".
+Please carefully proofread the whole paper.
+\end{verbatim}
+Answer: We have proofread the whole paper and the typos have been corrected in the revised manuscript. The definitions for the variables have been added in Section ?? of the revised revision. All the mentioned presentation issues have been addressed in the revised manuscript.
+
+\begin{verbatim}
+(6) In Tab I and Tab II, authors use absolute error to
+evaluate estimation performance. However, authors should
+give real-value of occupancy. Why not use relative error
+to evaluate that? It seems be more reasonable.
+\end{verbatim}
+Answer:
+
+\begin{verbatim}
+(7) How to determine constant C in SVR.
+\end{verbatim}
+Answer: Constant C in SVR is one of its hyper parameters. In this paper we used grid search to determine the value C. We added the explanation in Section ????.
+
+\subsection{Answers to reviewer \#2's comments}
+\begin{verbatim}
+(1) This paper uses SVR and RNN to predict the occupation
+(i.e., the number of people in a room). The proposed technique
+can be provided to smart buildings to optimally control
+the HVAC system. A smart building can shut down the HVAC
+system for empty rooms. It can save 28\% electricity energy
+according to the previous research. The proposed method is
+demonstrated based on the simulation results by EnergyPlus.
+This reviewer would like to bring up the following comments.
+
+Comparing the SVR and RNN models, different features are used.
+For SVR, the features include solar angle, light energy,
+outdoor temperature, indoor temperature and working time.
+For RNN, other ambient factors and HVAC power are used. Why
+do the authors use different features here? Ideally, the same
+features should be used for different models in order to make
+a fare comparison.
+\end{verbatim}
+
+Answer:
+Thanks for your comments. It is a writing mistake. We do use the same feature set for comparison. We have clarified this point in Section ??? of the revised revision.
+
+\begin{verbatim}
+(2) The authors claim that the SVR model is more stable if
+the features are changed. The definition of ``changing
+features'' is not clear. Please clarify.
+\end{verbatim}
+
+Answer: Changing features means to add or delete one feature in the feature pool. SVR
+performs a little more stably from the experiment results. We have clarified this in Section ??? of the revised manuscript.
+
+\begin{verbatim}
+(3) The authors discuss the accuracy and characteristics based on
+Figure 16. However, it is very hard to observe any difference
+between the curves generated from SVR, RNN and EnergyPlus.
+\end{verbatim}
+
+Answer: We made our conclusion not only from figure but also from statistics we get
+from experiments. It is a result from observation of figure as well as
+calculation from statistics. ????
+
+\begin{verbatim}
+(4) The training and testing data are generated from EnergyPlus
+by simulation other than physical measurement. The accuracy of
+EnergyPlus simulation cannot be guaranteed. Please discuss
+the pros and cons of such a simulation-based approach.
+\end{verbatim}
+
+Answer: EnergyPlus has been proven as a successful energy simulation program with
+widely-accepted accuracy for modern buildings (two citations added to the
+paper).  Instead of conducting real building experiments, using EnergyPlus to
+test and simulate the proposed models is therefore valid, with a state of art
+simulation accuracy, which was a major pain point in the past. On the other
+hand, using EnergyPlus allows the authors to efficiently choose from a variety
+of buildings to test on, as well as easily configure the energy inputs.
+
+\begin{verbatim}
+(5) There are several other minor issues. In the second paragraph of
+Introduction, the authors mention that 70% of the energy has been
+consumed by buildings according to the US department of energy.
+A citation is needed. In addition, a citation for EnergyPlus
+is needed as well.
+\end{verbatim}
+
+Answer: A Dept Energy citation was added to support the 70\% consumption percentage.
+URL (doesn't appear in the paper due to the formatting):
+https://www.eia.gov/totalenergy/data/annual/index.php\#consumption
+An EnergyPlus citation was added for the EnergyPlus software.
+
+\begin{verbatim}
+(6) There is no label for the x-axis in Figures 10, 11, 12, 14 and 15.
+\end{verbatim}
+
+Answer: Fixed. In the captions, we added descriptions for x-axis range, unit, and
+sample period.
+
+\subsection{Answers to reviewer \#3's comments}
+%\vspace{0.2in}\emph{Review number 3.}
+\begin{verbatim}
+(1) Comments to the Author: In this model, we provide two sets of
+model which offers different extent of convenience to detect
+number of employees in an office. I have no clue what the above
+sentence is trying to say. There are many more like this. Occupancy
+determination is highly studied in the literature. Authors don't seem
+to be aware of the variety of work done in the area. I don't know
+what the paper is about and what its novelty is.
+\end{verbatim}
+
+Answer: ???????? We have added a list at the end of introduction section to highlight our
+contribution and novelty.
+
+\subsection{Answers to reviewer \#4's comments}
+\begin{verbatim}
+(1) Comments to the Author: A machine learning based method is
+proposed in this paper to detect the occupancy behavior of
+a building. The paper is well-organized and well-written.
+The rationale behind the method is reasonable and interesting.
+I list my main concerns as below.
+
+Related works are not completely reviewed. More related works
+should be introduced to draw a big picture for the readers.
+\end{verbatim}
+
+Answer: ?????
+
+
+\begin{verbatim}
+(2) Extensive simulations have been carried out to validate the
+effectiveness of the proposed method, and many experimental
+results are shown in the paper. However, few result analyses
+are given in the paper to explain the reason why the proposed
+approach can achieve better performance.
+\end{verbatim}
+
+Answer: Comparing to the referencing result, the occupation detection performance is
+satisfactory, in terms of the detection accuracy. It is superior than others
+in the following aspects: 1) No explicit requirement of body-detection
+devices, such as infrared detector, which reduces the deployment effort and
+cost; 2) Machine learning methods are black-boxed which do not require
+explicit modeling.
+
+Introduction section was revised to reflect the points mentioned above.
+
+\begin{verbatim}
+(3) How to select the optimal parameters of SVR and RNN? It is
+well known that the performance of SVR and RNN heavily depends
+on parameter selection.
+\end{verbatim}
+
+Answer:
+We revised section ``feature selection" under ``proposed occupancy estimation
+approaches". All the five thermal-related features should be used in order to
+achieve the highest detection accuracy. However, it is sometimes not practical
+to acquire all the information, such as the lighting energy, as described.  In
+such situation, we can observe a detection accuracy degradation, as described
+in the experiment result section.
+
+
+
+\begin{verbatim}
+(4) The authors should clearly point out the major contributions
+of this paper by using 3 to 5 brief bullet points.
+\end{verbatim}
+
+Answer: We have added a list at the end of introduction section.
+
+
+\begin{verbatim}
+(5) You need to decrease the number of pages since there are some
+unnecessary explanations especially in the experimental parts.
+Suppose the readers are familiar with basic concepts. Overall,
+I think the extension has enough material to be considered for
+publication in TODAES.
+\end{verbatim}
+
+Answer: We have deleted redundant explanations in the revised manuscript.
