@@ -8,20 +8,20 @@ The elemental idea of the regression is to seek out a function that can accurate
 f\left( x \right) =  {w \cdot \Gamma \left( x \right)}  + \lambda
 \label{eq:1}
 \end{equation}
-In the equation above, $w \in {R^n},$ $\lambda \in {R},$ and $\Gamma$ stands for a nonlinear transformation from $R^n$ to a high dimensional space. The transformation grants the power for a feature to be transferred into more complex dimension. Our objective is to find a value of $w$ and $\lambda$ such that the value of $x$ can be resolved via minimization of the regression risk
+\textcolor{feb18rev}{In the equation above, $w \in {R^n}$ is a hyperplane direction, $\lambda \in {R}$, $x \in {R^n}$ is derived from the feature space, and $\Gamma$ stands for a nonlinear transformation from $R^n$ to a high dimensional space.} The transformation grants the power for a feature to be transferred into more complex dimension. Our objective is to find a value of $w$ and $\lambda$ such that the value of $x$ can be resolved via minimization of the regression risk
 \begin{equation}
 %{R_{reg}}\left( f \right) = C\sum\limits_{i = 0}^l {\Gamma \left( {f\left( {{x_i}} \right) - {y_i}} \right) + \frac{1}{2}{{\left\| w \right\|}^2}}
 {R_{reg}}\left( f \right) = C\sum\limits_{i = 0}^l {{G _i} + \frac{1}{2}{{\left\| w \right\|}^2}}
 \label{eq:2}
 \end{equation}
-where ${G _i}$ is a loss function
+where \textcolor{feb18rev}{where $C$ is a constant, $l$ corresponds to the size of the training data, and ${G _i}$ is a loss function}
 \begin{equation}
     {G _i} = \left\{ {\begin{array}{*{20}{l}}
 {\left| {f\left( {{x_i}} \right) - {y_i}} \right| - \varepsilon ,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \left| {f\left( {{x_i}} \right) - {y_i}} \right| \ge \varepsilon }\\
 {0,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} otherwise}
 \end{array}} \right.
 \end{equation}
-Here $C$ is a constant. Through mathematical deduction \cite{travel}, the $\varepsilon {\rm{ - }}$insensitive loss function can be minimized as
+\textcolor{feb18rev}{Here $x_i\in R^n$ is the given training set of data, and $y_i$ s a corresponding target value.} Through mathematical deduction \cite{travel}, the $\varepsilon {\rm{ - }}$insensitive loss function can be minimized as
 \begin{equation}
 %\resizebox{1\columnwidth}{!}{
 \frac{1}{2}\sum\limits_{i,j = 1}^l {\left( {\alpha _i^* - {\alpha _i}} \right)\left( {\alpha _j^* - {\alpha _j}} \right)k\left( {{x_i},{x_j}} \right) - \sum\limits_{i = 1}^l {\alpha _i^*\left( {{y_i} - \varepsilon } \right)} }  - {\alpha _i}\left( {{y_i} + \varepsilon } \right)
@@ -59,8 +59,8 @@ etc.~\cite{haykin2004compreh}. There are many RNN structures
 proposed by varying the form of the recurrent
 feedbacks~~\cite{elman1990finding,haykin2004compreh,puskorius1996dynamic}.
 
-We apply the Elman recurrent neural network architecture as shown in
-Fig.~\ref{fig:elman} to the occupancy of each room in a certain smart building.
+\textcolor{feb18rev}{The Elman recurrent neural network shown in
+Fig.~\ref{fig:elman} is used to detect the occupancy behavior of a building.}
 We describe the structure Elman architecture, how the gold-referencing data is
 computed, and the detailed works on training the networks. We construct Elman recurrent neural network architecture (as shown in Fig.~\ref{fig:elman}) to build the black-box model for occupancy detection. In
 our work the size (number of neurons) of hidden layers are assigned according
