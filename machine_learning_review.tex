@@ -19,7 +19,7 @@ where ${G _i}$ is a loss function
 {\left| {f\left( {{x_i}} \right) - {y_i}} \right| - \varepsilon ,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \left| {f\left( {{x_i}} \right) - {y_i}} \right| \ge \varepsilon }\\
 {0,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} otherwise}
 \end{array}} \right.\]
-Here $C$ is a constant, and $k\left( {{x_i},x} \right)$ is known as a kernel function. Through mathematical deduction \cite{travel}, the $\varepsilon {\rm{ - }}$insensitive loss function can be minimized as
+Here $C$ is a constant. Through mathematical deduction \cite{travel}, the $\varepsilon {\rm{ - }}$insensitive loss function can be minimized as
 \begin{equation}
 %\resizebox{1\columnwidth}{!}{
 \frac{1}{2}\sum\limits_{i,j = 1}^l {\left( {\alpha _i^* - {\alpha _i}} \right)\left( {\alpha _j^* - {\alpha _j}} \right)k\left( {{x_i},{x_j}} \right) - \sum\limits_{i = 1}^l {\alpha _i^*\left( {{y_i} - \varepsilon } \right)} }  - {\alpha _i}\left( {{y_i} + \varepsilon } \right)
@@ -28,7 +28,7 @@ subject to
 $
 \label{eq:5}
 \sum\limits_{i = 1}^l {\left( {\alpha  - \alpha _i^*} \right) = 0,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \left( {{\alpha _i} - \alpha _i^*} \right) \in \left[ {0,C} \right]}
-$. Here ${\alpha _i}$ and $\alpha _i^*$ are Lagrange multipliers, which denote solutions to the quadratic problem.
+$  and $k\left( {{x_i},x} \right)$ is known as a kernel function.  ${\alpha _i}$ and $\alpha _i^*$ are Lagrange multipliers, which denote solutions to the quadratic problem.
 The constant $C$ decides penalties to estimation errors: When $C$ becomes larger, the penalties to errors become higher, thus the regression is trained to reduce the error with lower generalization. On the contrast, a small $C$ assigns lower penalties to errors, which results in a higher generalization model. If $C$ becomes infinitely large, SVR would not bear any errors and generates a complex model, whereas the model would tolerate a huge number of errors if $C$ is set to zero.
 The value of $w$ in accordance with the Lagrange multipliers is already acquired before we find the value of variable $\lambda$. Using KKT conditions $\lambda$, it can be calculated as follows
 \[\begin{array}{l}
