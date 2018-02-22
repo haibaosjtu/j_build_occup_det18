@@ -15,10 +15,12 @@ In the equation above, $w \in {R^n},$ $\lambda \in {R},$ and $\Gamma$ stands for
 \label{eq:2}
 \end{equation}
 where ${G _i}$ is a loss function
-\[{G _i} = \left\{ {\begin{array}{*{20}{l}}
+\begin{equation}
+    {G _i} = \left\{ {\begin{array}{*{20}{l}}
 {\left| {f\left( {{x_i}} \right) - {y_i}} \right| - \varepsilon ,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \left| {f\left( {{x_i}} \right) - {y_i}} \right| \ge \varepsilon }\\
 {0,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} otherwise}
-\end{array}} \right.\]
+\end{array}} \right.
+\end{equation}
 Here $C$ is a constant. Through mathematical deduction \cite{travel}, the $\varepsilon {\rm{ - }}$insensitive loss function can be minimized as
 \begin{equation}
 %\resizebox{1\columnwidth}{!}{
@@ -31,10 +33,12 @@ $
 $  and $k\left( {{x_i},x} \right)$ is known as a kernel function.  ${\alpha _i}$ and $\alpha _i^*$ are Lagrange multipliers, which denote solutions to the quadratic problem.
 The constant $C$ decides penalties to estimation errors: When $C$ becomes larger, the penalties to errors become higher, thus the regression is trained to reduce the error with lower generalization. On the contrast, a small $C$ assigns lower penalties to errors, which results in a higher generalization model. If $C$ becomes infinitely large, SVR would not bear any errors and generates a complex model, whereas the model would tolerate a huge number of errors if $C$ is set to zero.
 The value of $w$ in accordance with the Lagrange multipliers is already acquired before we find the value of variable $\lambda$. Using KKT conditions $\lambda$, it can be calculated as follows
-\[\begin{array}{l}
+\begin{equation}
+    \begin{array}{l}
 \lambda = {y_i} - \left( {w,{x_i}} \right) - \varepsilon {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} for{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\alpha _i} \in \left( {0,C} \right)\\
 \lambda= {y_i} - \left( {w,{x_i}} \right) + \varepsilon {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} for{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \alpha _i^* \in \left( {0,C} \right)
-\end{array}\]
+\end{array}
+\end{equation}
 Putting it together enables us to apply SVR without knowing the concrete transformation. By adjusting parameters in SVR model, it is capable of accurately conducting detection on office occupancy.
 
 \subsection{Review of Recurrent Neural Network }
