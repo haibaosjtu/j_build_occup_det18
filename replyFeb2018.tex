@@ -4,8 +4,7 @@
 \setcounter{page}{1} \pagenumbering{roman}\vskip 2pc
 
 \centerline{\LARGE \bf Summary of Revision}
-\centerline{\Large (paper id: No.
-TODAES-2017-P-1537)}
+\centerline{\Large (paper id: No.~TODAES-2017-P-1537)}
 
 \section{Revision summary}
 
@@ -151,7 +150,14 @@ evaluate estimation performance. However, authors should
 give real-value of occupancy. Why not use relative error
 to evaluate that? It seems be more reasonable.
 \end{verbatim}
-Answer:
+Answer: The real-values of occupancy (people count in room) are shown in figures
+\ref{fig:compare1}, \ref{fig:compare2}, \ref{fig:compare3},
+\ref{fig:one-layer}, and \ref{fig:two-layer}. Y-axis represents number of
+people. We use relative error (error rate) to evaluate occupancy detection, as
+shown in tables \ref{table:training}, \ref{table:testing}, \ref{tab:terr-stat},
+and \ref{tab:verr-stat}. We slightly changed the table formats so that they use
+unified error rate to deliver better comparison, as visualized in figure
+\ref{fig:accuracy-comparison}.
 
 \begin{verbatim}
 (7) How to determine constant C in SVR.
