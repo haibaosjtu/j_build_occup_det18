@@ -4,26 +4,26 @@ This section briefly introduces some basic concepts of machine learning methods 
 
 \subsection{Review of Support Vector Regression}
 The elemental idea of the regression is to seek out a function that can accurately detect future values and the generic SVR estimating function is formed as
-\[
+\begin{equation}
 f\left( x \right) =  {w \cdot \Gamma \left( x \right)}  + \lambda
 \label{eq:1}
-\]
+\end{equation}
 In the equation above, $w \in {R^n},$ $\lambda \in {R},$ and $\Gamma$ stands for a nonlinear transformation from $R^n$ to a high dimensional space. The transformation grants the power for a feature to be transferred into more complex dimension. Our objective is to find a value of $w$ and $\lambda$ such that the value of $x$ can be resolved via minimization of the regression risk
-\[
+\begin{equation}
 %{R_{reg}}\left( f \right) = C\sum\limits_{i = 0}^l {\Gamma \left( {f\left( {{x_i}} \right) - {y_i}} \right) + \frac{1}{2}{{\left\| w \right\|}^2}}
 {R_{reg}}\left( f \right) = C\sum\limits_{i = 0}^l {{G _i} + \frac{1}{2}{{\left\| w \right\|}^2}}
 \label{eq:2}
-\]
+\end{equation}
 where ${G _i}$ is a loss function
 \[{G _i} = \left\{ {\begin{array}{*{20}{l}}
 {\left| {f\left( {{x_i}} \right) - {y_i}} \right| - \varepsilon ,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \left| {f\left( {{x_i}} \right) - {y_i}} \right| \ge \varepsilon }\\
 {0,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} otherwise}
 \end{array}} \right.\]
 Here $C$ is a constant, and $k\left( {{x_i},x} \right)$ is known as a kernel function. Through mathematical deduction \cite{travel}, the $\varepsilon {\rm{ - }}$insensitive loss function can be minimized as
-$$
-\resizebox{1\columnwidth}{!}{
-$\frac{1}{2}\sum\limits_{i,j = 1}^l {\left( {\alpha _i^* - {\alpha _i}} \right)\left( {\alpha _j^* - {\alpha _j}} \right)k\left( {{x_i},{x_j}} \right) - \sum\limits_{i = 1}^l {\alpha _i^*\left( {{y_i} - \varepsilon } \right)} }  - {\alpha _i}\left( {{y_i} + \varepsilon } \right)$}
-$$
+\begin{equation}
+%\resizebox{1\columnwidth}{!}{
+\frac{1}{2}\sum\limits_{i,j = 1}^l {\left( {\alpha _i^* - {\alpha _i}} \right)\left( {\alpha _j^* - {\alpha _j}} \right)k\left( {{x_i},{x_j}} \right) - \sum\limits_{i = 1}^l {\alpha _i^*\left( {{y_i} - \varepsilon } \right)} }  - {\alpha _i}\left( {{y_i} + \varepsilon } \right)
+\end{equation}
 subject to
 $
 \label{eq:5}
