@@ -25,7 +25,7 @@ highlight the following major modifications:
 \item The main concern of the manuscript has been addressed in the
 introduction section and more citations have been added.
 
-\item Some figures have been updated\/ regenerated and the more
+\item Some figures have been updated and the more
 discussions about comparisons with existing works have been added in
 the introduction section and the numerical experiment section.
 
@@ -75,8 +75,9 @@ learning method such as the traditional back propagation (BP) neural
 network algorithm can be used for occupancy detection for smart
 buildings. Actually we did the experiments by using the BP neural
 network and found that this method can also be applied for detecting
-human occupancy (details are omitted because of limited space). We
-have addressed this in the introduction section of the revised
+human occupancy (details are omitted because of limited space). 
+
+We have addressed this in the introduction section of the revised
 manuscript.
 
 \begin{verbatim}
@@ -103,7 +104,9 @@ give sufficient survey for related works.
 \end{verbatim}
 
 Answer:
-Thanks for pointing this out. Some more existing works have been reviewed and some more citations of related works have been added, please see the introduction section of the revised revision. For the work [1] mentioned by the reviewer, it uses CO$_2$, motion, and acoustics to detect occupancy and achieves 92\% accuracy. The work [2] uses CO$_2$ and motion sensors to build a probability model using 3-month data, which was used in energy-comfort optimization. The authors of [2] didn't provide occupancy detection precision. The work [3] have one major disadvantage (mentioned in [3]/Table2): multiple sensor network needed. Different from these methods, we build a machine learning model for occupancy detection by carefully selecting some features including solar angle, indoor temperatures, outdoor temperatures, working time, and lights energy. Comparing to the work [1], which provided accuracy data (92\%), our RNN method can achieve higher than 99\% accuracy using two or more hidden recurrent layers.
+Thanks for pointing this out. Some more existing works have been reviewed and some more citations of related works have been added, please see the introduction section of the revised revision. 
+
+For the work [1] mentioned by the reviewer, it uses CO$_2$, motion, and acoustics to detect occupancy and achieves 92\% accuracy. The work [2] uses CO$_2$ and motion sensors to build a probability model using 3-month data, which was used in energy-comfort optimization. The authors of [2] didn't provide occupancy detection precision. The work [3] have one major disadvantage (mentioned in [3]/Table2): multiple sensor network needed. Different from these methods, we build a machine learning model for occupancy detection by carefully selecting some features including solar angle, indoor temperatures, outdoor temperatures, working time, and lights energy. Comparing to the work [1], which provided accuracy data (92\%), our RNN method can achieve higher than 99\% accuracy using two or more hidden recurrent layers.
 
 \begin{verbatim}
 (3) In addition, there are other several comments or concerns about
