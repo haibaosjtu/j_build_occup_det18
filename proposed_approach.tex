@@ -151,14 +151,28 @@ there is a nonlinear relationship between the occupancy and the
 related factors. The machine learning model can be used to solve this
 nonlinear problem for occupancy detection.
 
-In this model, we provide two sets of model which offers different
-extent of convenience to detect number of employees in an office. The
-first set of model is comprised of features such as solar factor,
-working time, indoor temperature and outdoor temperature, data of
-which can be acquired through sole mathematic computation and
-EnergyPlus simulation. It is relatively convenient to obtain all the
+%In this model, we provide two sets of model which offers different
+%extent of convenience to detect number of employees in an office. The
+%first set of model is comprised of features such as solar factor,
+%working time, indoor temperature and outdoor temperature, data of
+%which can be acquired through sole mathematic computation and
+%EnergyPlus simulation. It is relatively convenient to obtain all the
+%features required in the first feature set. However, we introduce one
+%more features in the second feature set, light factor, to enhance the
+%accuracy of model. Light factor requires the model to learn overall
+%energy that light consumes during a certain quantity of time which is
+%a comparatively inconvenient feature to obtain, however, it is capable
+%of making the detection more accurate. It is also highlighted here
+%that all of the data we feed in the model is generated from EnergyPlus
+%or obtained through mathematical calculation, thus further experiments
+%are likely to be conducted in real-life data condition.
+
+\textcolor{feb18rev}{In the proposed machine learning model, two features sets are provided
+for occupancy detection in a building. The first set is comprised of features such as solar factor,
+working time, indoor temperature and outdoor temperature, which can be acquired through sole mathematic computation and
+EnergyPlus simulation.} It is relatively convenient to obtain all the
 features required in the first feature set. However, we introduce one
-more features in the second feature set, light factor, to enhance the
+more feature in the second feature set, light factor, to enhance the
 accuracy of model. Light factor requires the model to learn overall
 energy that light consumes during a certain quantity of time which is
 a comparatively inconvenient feature to obtain, however, it is capable
