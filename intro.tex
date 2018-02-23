@@ -143,9 +143,9 @@ maximum considering ambient, room temperatures and HVAC powers as detectable
 information. Without knowing HVAC powers, the estimation error can still be
 0.044 on average, and only 0.71\% estimated points have errors greater than
 0.5. Our study further shows both methods can deliver similar accuracy in the
-occupancy detection.  But that SVR model is more stable for changing features
-of the system, while the RNN method can deliver more accuracy when the features
-used in the model do not change a lot.  \textcolor{feb18rev}{Comparing to
+occupancy detection. \textcolor{feb18rev}{But the SVR model is more stable for
+adding or removing features of the system, while the RNN method can deliver 
+more accuracy when the features used in the model do not change a lot. Comparing to
 first-principle based methods, SVR and RNN methods work in a black-box way,
 which reduces the efforts of explicitly building model of occupancy
 detection and sensor network deployment, while good detection accuracy can
