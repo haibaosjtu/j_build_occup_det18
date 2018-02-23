@@ -148,10 +148,10 @@ INAOE and CINVESTAV, Mexico
   information. Without knowing HVAC powers, the estimation error can
   still be 0.044 on average, and only 0.71\% estimated points have
   errors greater than 0.5. Our study further shows both methods can
-  deliver similar accuracy in the occupancy detection. But that SVR
-  model is more stable for changing features of the system, while the
+  deliver similar accuracy in the occupancy detection. \textcolor{feb18rev}{But the SVR
+  model is more stable for adding or removing features of the system, while the
   RNN method can deliver more accuracy when the features used in the
-  model do not change a lot.
+  model do not change a lot.}
 \end{abstract}
 
 
@@ -230,9 +230,9 @@ estimate the occupancy only using ambient factors and room
 temperatures. With HVAC powers added, the estimation can be even more
 accurate with even simpler neural networks.  Our study further shows
 both methods can deliver similar accuracy in the occupancy detection.
-But that SVR model is more stable for changing features of the system,
-while the RNN method can deliver more accuracy when the features used
-in the model do not change a lot.
+\textcolor{feb18rev}{But the SVR model is more stable for adding or removing a feature
+from the feature pool, while the RNN method can deliver more accuracy when the features used
+in the model do not change a lot.}
 
 % As a conclusion, what influences the model is the number of features
 % and the number of data points, virtually the two different methods SVR
