@@ -62,7 +62,7 @@ experiments.
 Answer: Thanks for your comments. SVR and RNN methods are widely used
 in non-linear regression applications because of their good
 interpolation performance.  We started with the SVR first for our
-problem as it is a widely used tradtional machine learning
+problem as it is a widely used traditional machine learning
 method. Then we applied the RNN to the same problem as an RNN is able
 to efficiently capture frequency-domain characteristics in its
 recurrent neurons, modeling a non-linear dynamic system underlying,
@@ -122,7 +122,7 @@ temperatures, working time, and lights energy. Comparing to the work
 [1], which provided accuracy data (92\%), our RNN method can achieve
 higher than 99\% accuracy using two or more hidden recurrent layers.
 
-We have update the sectoin xxx to add this comparison discussions (TODO).
+We have update the section \ref{sec:intro} to add this comparison discussions.
 
 \begin{verbatim}
 (3) In addition, there are other several comments or concerns about
@@ -138,10 +138,11 @@ thermostats virtually are more likely to consume more energies
 than ones without using smart devices"? Reviewer cannot find
 the same opinion in Ref [Bias and Cheng1999]".
 \end{verbatim}
-Answer: Buildings utilizing programmable
-thermostats virtually are more likely to consume more energies than ones
-without using smart devices because the smart devices often set off wrongly
-and causes unnecessary cost.
+Answer: We actually mean that ``Some buildings utilizing scheduled-based
+programmable thermostats \emph{may consume more energy} than ones without using
+smart devices, when actual occupancy deviates from the programmed schedule''.
+In cited work \cite{bias1999elec}, this is stated in section 2, lines 20--25.
+We made an update in section \ref{sec:intro} to make it clearer.
 
 \begin{verbatim}
 (5) Typo in page 3, 50 line, provide -> provides. Please
@@ -161,7 +162,7 @@ the revised manuscript. The definitions for the variables have been added in
 Section \ref{sec:machine_learning_review} of the revised revision. All the mentioned presentation issues have
 been addressed in the revised manuscript.
 
-\begin{verbatim} 
+\begin{verbatim}
 (6) In Tab I and Tab II, authors use absolute error to
 evaluate estimation performance. However, authors should
 give real-value of occupancy. Why not use relative error
@@ -236,7 +237,7 @@ between the curves generated from SVR, RNN and EnergyPlus.
 
 Answer: Indeed, both SVR and RNN methods can deliver similar accuracy
 in the occupancy detection with EnergyPlus, as shown in Figure
-\ref{fig:comparison}. To remedy this, we added a new figure~\ref{xxxx}
+\ref{fig:comparison}. To remedy this, we added a new figure~\ref{fig:accuracy-comparison}
 to further show the differences in accuracy between the proposed SVR
 and RNN models and the method in \cite{dong2014real} in Section
 \ref{sec:results} of the revised version.
@@ -361,7 +362,7 @@ on parameter selection.
 
 Answer: We have added some discussions about the feature selection in
 Section \ref{sec:feature_selection} of the revised manuscript. All the five thermal-related
-features should be used in order to achieve the highest detection accuracy. 
+features should be used in order to achieve the highest detection accuracy.
 However, it is sometimes not practical to acquire all the information,
 such as the lighting energy, as described. In such situation, we can
 observe a detection accuracy degradation, as described
