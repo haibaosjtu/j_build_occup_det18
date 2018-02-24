@@ -41,11 +41,15 @@ different number of features in this model.
 We evaluate the SVR detection model using
 testing data set. Through a wide range of experiments, we learn radial
 basis function kernel also known as Gaussian kernel works best in this
-model. The two most important parameters in SVR model are penalty $C$
-and radius $\varepsilon$, where plenty of tests are conducted to obtain
-a good set of parameter, hence, we experiment different values of $C$
-and $\varepsilon$ hoping to obtain the best. It is widely known that
-to get an accurate performance in SVR model or any other machine
+model. \textcolor{feb18rev}{The two most important parameters in SVR model 
+are the penalty $C$ and the radius $\varepsilon$. For the confidence penalty,
+the grid search algorithm \cite{Hsu2003} is performed for finding a confidence
+penalty weight to work best.}
+%The two most important parameters in SVR model are penalty $C$ and radius $\varepsilon$,
+%where plenty of tests are conducted to obtain
+%a good set of parameter, hence, we experiment different values of $C$
+%and $\varepsilon$ hoping to obtain the best. 
+It is widely known that to get an accurate performance in SVR model or any other machine
 learning methods, the best approach is to enumerate a quantity of
 combinations of parameters, and conduct experiments to drive the
 result toward a better trend. During the process of seeking out the
