@@ -61,20 +61,23 @@ experiments.
 
 Answer: Thanks for your comments. SVR and RNN methods are widely used
 in non-linear regression applications because of their good
-interpolation performance. Therefore, RNN and SVR can be used to
-detect the occupancy behavior. Especially, an RNN is able to
-efficiently capture frequency-domain characteristics in its recurrent
-neurons, modeling a non-linear dynamic system underlying, which is an
-advantage of being awareness of daily, weekly, and seasonal occupation
-patterns. In this paper we want to address the comparison between
-traditional machine learning algorithm with deep learning
-technique. SVR is a traditional machine learning algorithm which is
-widely used as well. It should be also noted that other machine
-learning method such as the traditional back propagation (BP) neural
-network algorithm can be used for occupancy detection for smart
-buildings. Actually we did the experiments by using the BP neural
-network and found that this method can also be applied for detecting
-human occupancy (details are omitted because of limited space). 
+interpolation performance.  We started with the SVR first for our
+problem as it is a widely used tradtional machine learning
+method. Then we applied the RNN to the same problem as an RNN is able
+to efficiently capture frequency-domain characteristics in its
+recurrent neurons, modeling a non-linear dynamic system underlying,
+which is an advantage of being awareness of daily, weekly, and
+seasonal occupation patterns.  As a result, we can compare the
+traditional machine learning algorithm with deep learning technique
+for this problem. The comparisons indeed sheds some interesting lights
+on this problem for the two methods as shown in the experimental section.
+
+It should be also noted that other machine learning method such as the
+traditional back propagation (BP) neural network algorithm can be used
+for occupancy detection for smart buildings. Actually we did the
+experiments by using the BP neural network and found that this method
+can also be applied for detecting human occupancy (details are omitted
+because of limited space).
 
 We have addressed this in the introduction section of the revised
 manuscript.
@@ -102,10 +105,24 @@ I cannot list all works about occupancy detection. Authors should
 give sufficient survey for related works.
 \end{verbatim}
 
-Answer:
-Thanks for pointing this out. Some more existing works have been reviewed and some more citations of related works have been added, please see the introduction section of the revised revision. 
+Answer: Thanks for pointing this out. Some more existing works have
+been reviewed and some more citations of related works have been
+added, please see the introduction section of the revised revision.
 
-For the work [1] mentioned by the reviewer, it uses CO$_2$, motion, and acoustics to detect occupancy and achieves 92\% accuracy. The work [2] uses CO$_2$ and motion sensors to build a probability model using 3-month data, which was used in energy-comfort optimization. The authors of [2] didn't provide occupancy detection precision. The work [3] have one major disadvantage (mentioned in [3]/Table2): multiple sensor network needed. Different from these methods, we build a machine learning model for occupancy detection by carefully selecting some features including solar angle, indoor temperatures, outdoor temperatures, working time, and lights energy. Comparing to the work [1], which provided accuracy data (92\%), our RNN method can achieve higher than 99\% accuracy using two or more hidden recurrent layers.
+For the work [1] mentioned by the reviewer, it uses CO$_2$, motion,
+and acoustics to detect occupancy and achieves 92\% accuracy. The work
+[2] uses CO$_2$ and motion sensors to build a probability model using
+3-month data, which was used in energy-comfort optimization. The
+authors of [2] didn't provide occupancy detection precision. The work
+[3] have one major disadvantage (mentioned in [3]/Table2): multiple
+sensor network needed. Different from these methods, we build a
+machine learning model for occupancy detection by carefully selecting
+some features including solar angle, indoor temperatures, outdoor
+temperatures, working time, and lights energy. Comparing to the work
+[1], which provided accuracy data (92\%), our RNN method can achieve
+higher than 99\% accuracy using two or more hidden recurrent layers.
+
+We have update the sectoin xxx to add this comparison discussions (TODO).
 
 \begin{verbatim}
 (3) In addition, there are other several comments or concerns about
@@ -139,12 +156,12 @@ recurrent neural network architecture as shown in Fig. 4 to
 the occupancy of each room in a certain smart building.".
 Please carefully proofread the whole paper.
 \end{verbatim}
-Answer: We have proofread the whole paper and the typos have been corrected in
+Answer: Thank. We have proofread the whole paper and the typos have been corrected in
 the revised manuscript. The definitions for the variables have been added in
 Section \ref{sec:machine_learning_review} of the revised revision. All the mentioned presentation issues have
 been addressed in the revised manuscript.
 
-\begin{verbatim}
+\begin{verbatim} 
 (6) In Tab I and Tab II, authors use absolute error to
 evaluate estimation performance. However, authors should
 give real-value of occupancy. Why not use relative error
@@ -163,7 +180,8 @@ unified error rate to deliver better comparison, as visualized in Figure
 (7) How to determine constant C in SVR.
 \end{verbatim}
 Answer: Constant C in SVR is one of its hyper parameters. In this paper we used
-grid search to determine the value C. We added the explanation in Section ????.
+grid search to determine the value C. We added the explanation in
+Section ????. (TODO).
 
 \subsection{Answers to reviewer \#2's comments}
 \begin{verbatim}
@@ -185,16 +203,18 @@ features should be used for different models in order to make
 a fare comparison.
 \end{verbatim}
 
-Answer:
-Thanks for your comments. Five main features are applied in the machine learning methods for occupancy detection.
-These features covers all major thermal-related aspects to be coupled with the human activity, such that
-occupancy can be determined theoretically. In order to investigate the impact
-of choosing different set of features and to improve the flexibility of practical
-deployment, different combination of features are used in the methods. We have addressed this in the feature selection Section
-\ref{sec:proposed_methods}.
+Answer: Thanks for your comments. Five main features are applied in
+the machine learning methods for occupancy detection.  These features
+covers all major thermal-related aspects to be coupled with the human
+activity, such that occupancy can be determined theoretically. In
+order to investigate the impact of choosing different set of features
+and to improve the flexibility of practical deployment, different
+combination of features are used in the methods. We have addressed
+this in the feature selection Section \ref{sec:proposed_methods}.
 
 For a fare comparison between SVR and RNN, we do use the same feature
-set for a fare comparison. We have clarified this point in the comparison Section \ref{sec:comparison_svr_rnn} of the revised
+set for a fare comparison. We have clarified this point in the
+comparison Section \ref{sec:comparison_svr_rnn} of the revised
 revision.
 
 \begin{verbatim}
@@ -203,9 +223,10 @@ the features are changed. The definition of ``changing
 features'' is not clear. Please clarify.
 \end{verbatim}
 
-Answer: Changing features means to add or remove one feature in the feature pool. SVR
-performs a little more stably from the experiment results. We have clarified
-this in the abstract, the conclusion, and the introduction Section \ref{sec:intro} of the revised manuscript.
+Answer: Changing features means to add or remove one feature in the
+feature pool. SVR performs a little more stably from the experiment
+results. We have clarified this in the abstract, the conclusion, and
+the introduction Section \ref{sec:intro} of the revised manuscript.
 
 \begin{verbatim}
 (3) The authors discuss the accuracy and characteristics based on
@@ -213,8 +234,12 @@ Figure 16. However, it is very hard to observe any difference
 between the curves generated from SVR, RNN and EnergyPlus.
 \end{verbatim}
 
-Answer: Indeed, both SVR and RNN methods can deliver similar accuracy in the occupancy detection with EnergyPlus,
-as shown in Figure \ref{fig:comparison}. To remedy this, we added a new figure to further show the differences in accuracy between the proposed SVR and RNN models and the method in \cite{dong2014real} in Section \ref{sec:results} of the revised version. 
+Answer: Indeed, both SVR and RNN methods can deliver similar accuracy
+in the occupancy detection with EnergyPlus, as shown in Figure
+\ref{fig:comparison}. To remedy this, we added a new figure~\ref{xxxx}
+to further show the differences in accuracy between the proposed SVR
+and RNN models and the method in \cite{dong2014real} in Section
+\ref{sec:results} of the revised version.
 
 \begin{verbatim}
 (4) The training and testing data are generated from EnergyPlus
@@ -223,16 +248,19 @@ EnergyPlus simulation cannot be guaranteed. Please discuss
 the pros and cons of such a simulation-based approach.
 \end{verbatim}
 
-Answer: EnergyPlus has been proven as a successful energy simulation program with
-widely-accepted accuracy for modern buildings (two citations added to the
-paper).  Instead of conducting real building experiments, using EnergyPlus to
-test and simulate the proposed models is therefore valid, with a state of art
-simulation accuracy, which was a major pain point in the past. On the other
-hand, using EnergyPlus allows the authors to efficiently choose from a variety
-of buildings to test on, as well as easily configure the energy inputs.
+Answer: EnergyPlus has been proven as a successful energy simulation
+program with widely-accepted accuracy and many realistic location
+ambient temperature information for modern buildings (two citations
+added to the paper).  Instead of conducting real building experiments,
+using EnergyPlus to test and simulate the proposed models is therefore
+valid, with a state of art simulation accuracy, which was a major pain
+point in the past. On the other hand, using EnergyPlus allows the
+authors to efficiently choose from a variety of buildings to test on,
+as well as easily configure the energy inputs.
 
-We have added some discussions about the pros and cons of such a simulation-based
-approach in Section \ref{sec:energy_plus_review} of the revised manuscript.
+We have added some discussions about the pros and cons of such a
+simulation-based approach in Section \ref{sec:energy_plus_review} of
+the revised manuscript.
 
 \begin{verbatim}
 (5) There are several other minor issues. In the second paragraph of
@@ -267,17 +295,23 @@ to be aware of the variety of work done in the area. I don't know
 what the paper is about and what its novelty is.
 \end{verbatim}
 
-Answer: Thanks for your comments. We have revised this sentence in Section \ref{sec:proposed_methods} of
-the revised manuscript. We have proofread the whole paper and the presentation issues have
-been addressed in the revised version. The main concern of the manuscript has been addressed in the
-introduction section and more citations have been added. Also, some more discussions about comparisons
-with existing works have been added in the introduction section and the numerical experiment section.
+Answer: Thanks for your comments. We have revised this sentence in
+Section \ref{sec:proposed_methods} of the revised manuscript. We have
+proofread the whole paper and the presentation issues have been
+addressed in the revised version. The main concern of the manuscript
+has been addressed in the introduction section and more citations have
+been added. Also, some more discussions and comparisons with
+existing works have been added in the introduction section and the
+numerical experiment section.
 
-Our work focuses on applying machine learning techniques, such as deep recurrent neural networks, to
-explore the possibility and accuracy of occupancy detection. This does not require explicitly application-specific modeling.
-Two machine learning methods are thoroughly compared in terms of accuracy, using different feature set, which highlights 
-the importance of certain significant features, such as HVAC power consumption. We have added a list at the end of
-Section \ref{sec:intro} to highlight our contribution and novelty.
+Our work focuses on applying machine learning techniques, such as deep
+recurrent neural networks, to explore the possibility and accuracy of
+occupancy detection. This does not require explicitly
+application-specific modeling.  Two machine learning methods are
+thoroughly compared in terms of accuracy, using different feature set,
+which highlights the importance of certain significant features, such
+as HVAC power consumption. We have added a list at the end of Section
+\ref{sec:intro} to highlight our contribution and novelty.
 
 \subsection{Answers to reviewer \#4's comments}
 \begin{verbatim}
@@ -308,14 +342,16 @@ are given in the paper to explain the reason why the proposed
 approach can achieve better performance.
 \end{verbatim}
 
-Answer: Comparing to the referencing result, the occupation detection performance is
-satisfactory, in terms of the detection accuracy. It is superior than others
-in the following aspects: 1) No explicit requirement of body-detection
-devices, such as infrared detector, which reduces the deployment effort and
-cost; 2) Machine learning methods are black-boxed which do not require
-explicit modeling.
+Answer: Comparing to the referencing result, the occupation detection
+performance is satisfactory, in terms of the detection accuracy. It is
+superior than others in the following aspects: 1) No explicit
+requirement of body-detection devices, such as infrared detector,
+which reduces the deployment effort and cost; 2) Machine learning
+methods are black-boxed and general which do not require explicit
+modeling.
 
-Introduction section was revised to reflect the points mentioned above.
+Introduction section was revised to reflect rationale of the
+proposed method.
 
 \begin{verbatim}
 (3) How to select the optimal parameters of SVR and RNN? It is
