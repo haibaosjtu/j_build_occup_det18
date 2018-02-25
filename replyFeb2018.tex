@@ -79,8 +79,8 @@ experiments by using the BP neural network and found that this method
 can also be applied for detecting human occupancy (details are omitted
 because of limited space).
 
-We have addressed this in the introduction section of the revised
-manuscript.
+We have addressed this in the introduction section (Section
+\ref{sec:intro}) of this revision.
 
 \begin{verbatim}
 (2) Authors should give some comparisons with other works in
@@ -107,7 +107,7 @@ give sufficient survey for related works.
 
 Answer: Thanks for pointing this out. Some more existing works have
 been reviewed and some more citations of related works have been
-added, please see the introduction section of the revised revision.
+added, please see the introduction section of this revision.
 
 For the work [1] mentioned by the reviewer, it uses CO$_2$, motion,
 and acoustics to detect occupancy and achieves 92\% accuracy. The work
@@ -122,7 +122,8 @@ temperatures, working time, and lights energy. Comparing to the work
 [1], which provided accuracy data (92\%), our RNN method can achieve
 higher than 99\% accuracy using two or more hidden recurrent layers.
 
-We have update Section \ref{sec:intro} to add this comparison discussions.
+We have update introduction section (Section \ref{sec:intro}) to add
+this comparison discussions.
 
 \begin{verbatim}
 (3) In addition, there are other several comments or concerns about
@@ -130,7 +131,7 @@ this paper. In page 2, 21 line, what is "IT"?
 \end{verbatim}
 Answer: IT means information technology. In the paper it means energy
 management system with information technology. We have added the explanation in
-Section \ref{sec:intro} of the revised manuscript.
+Section \ref{sec:intro} of this revision.
 
 \begin{verbatim}
 (4) In page 2, 24 line, why "buildings utilizing programmable
@@ -138,11 +139,13 @@ thermostats virtually are more likely to consume more energies
 than ones without using smart devices"? Reviewer cannot find
 the same opinion in Ref [Bias and Cheng1999]".
 \end{verbatim}
-Answer: We actually mean that ``Some buildings utilizing scheduled-based
-programmable thermostats \emph{may consume more energy} than ones without using
-smart devices, when actual occupancy deviates from the programmed schedule''.
-In cited work \cite{bias1999elec}, this is stated in section 2, lines 20--25.
-We made an update in Section \ref{sec:intro} to make it clearer.
+Answer: We actually mean that ``Some buildings utilizing
+scheduled-based programmable thermostats \emph{may consume more
+  energy} than ones without using smart devices, when actual occupancy
+deviates from the programmed schedule''.  In cited work
+\cite{bias1999elec}, this is stated in section 2, lines 20--25.  We
+made an update in the introduction section (Section \ref{sec:intro})
+to make it clearer.
 
 \begin{verbatim}
 (5) Typo in page 3, 50 line, provide -> provides. Please
@@ -157,10 +160,11 @@ recurrent neural network architecture as shown in Fig. 4 to
 the occupancy of each room in a certain smart building.".
 Please carefully proofread the whole paper.
 \end{verbatim}
-Answer: Thanks. We have proofread the whole paper and the typos have been corrected in
-the revised manuscript. The definitions for the variables have been added in
-Section \ref{sec:machine_learning_review} of the revised revision. All the mentioned presentation issues have
-been addressed in the revised manuscript.
+Answer: Thanks. We have proofread the whole paper and we hope all the
+typos have been corrected in this revision. The definitions
+for the variables have been added in Section
+\ref{sec:machine_learning_review} of this revision. All the mentioned
+presentation issues have been addressed in the revised manuscript.
 
 \begin{verbatim}
 (6) In Tab I and Tab II, authors use absolute error to
@@ -184,7 +188,9 @@ Answer: Constant C in SVR is one of its hyper parameters. In this paper, the gri
 was used to determine the value of C. Please find the introduction of the grid search algorithm in the
 newly added reference \cite{Hsu2003}.
 
-We have clarified this point in Sections \ref{sec:machine_learning_review} and \ref{sec:results} of the revised manuscript.
+We have clarified this point in Sections
+\ref{sec:machine_learning_review} and \ref{sec:results} of this
+revision.
 
 \subsection{Answers to reviewer \#2's comments}
 \begin{verbatim}
@@ -217,8 +223,7 @@ this in the feature selection Section \ref{sec:proposed_methods}.
 
 For a fare comparison between SVR and RNN, we do use the same feature
 set for a fare comparison. We have clarified this point in the
-comparison Section \ref{sec:comparison_svr_rnn} of the revised
-revision.
+comparison Section \ref{sec:comparison_svr_rnn} of this revision.
 
 \begin{verbatim}
 (2) The authors claim that the SVR model is more stable if
@@ -229,7 +234,7 @@ features'' is not clear. Please clarify.
 Answer: Changing features means to add or remove one feature in the
 feature pool. SVR performs a little more stably from the experiment
 results. We have clarified this in the abstract, the conclusion, and
-the introduction Section \ref{sec:intro} of the revised manuscript.
+the introduction Section \ref{sec:intro} of this revision.
 
 \begin{verbatim}
 (3) The authors discuss the accuracy and characteristics based on
@@ -263,7 +268,7 @@ as well as easily configure the energy inputs.
 
 We have added some discussions about the pros and cons of such a
 simulation-based approach in Section \ref{sec:energy_plus_review} of
-the revised manuscript.
+this revision.
 
 \begin{verbatim}
 (5) There are several other minor issues. In the second paragraph of
@@ -275,9 +280,9 @@ is needed as well.
 
 Answer: A Dept Energy citation was added to support the 70\% consumption
 percentage.  URL (doesn't appear in the paper due to the formatting):
-https://www.eia.gov/totalenergy/data/annual/index.php\#consumption An
+\url{https://www.eia.gov/totalenergy/data/annual/index.php\#consumption}. An
 EnergyPlus citation was added for the EnergyPlus software. We have added the
-citation entries in Section \ref{sec:energy_plus_review} of the revised version.
+citation entries in Section \ref{sec:energy_plus_review} of this version.
 
 \begin{verbatim}
 (6) There is no label for the x-axis in Figures 10, 11, 12, 14 and 15.
@@ -299,22 +304,26 @@ what the paper is about and what its novelty is.
 \end{verbatim}
 
 Answer: Thanks for your comments. We have revised this sentence in
-Section \ref{sec:proposed_methods} of the revised manuscript. We have
-proofread the whole paper and the presentation issues have been
-addressed in the revised version. The main concern of the manuscript
-has been addressed in the introduction section and more citations have
-been added. Also, some more discussions and comparisons with
-existing works have been added in the introduction section and the
-numerical experiment section.
+Section \ref{sec:proposed_methods} of this revision. We have proofread
+the whole paper and the presentation issues have been addressed. The
+main concern of the manuscript has been addressed in the introduction
+section and more citations have been added. Also, some more analysis
+and comparisons with existing works have been added in the
+introduction section and the numerical experiment section to highlight
+the motivation and contribuation of this work. We also added a list of
+major contribuations at the end of Section \ref{sec:intro} to
+highlight the contribution and the novelty of the proposed works.
 
-Our work focuses on applying machine learning techniques, such as deep
-recurrent neural networks, to explore the possibility and accuracy of
-occupancy detection. This does not require explicitly
-application-specific modeling.  Two machine learning methods are
-thoroughly compared in terms of accuracy, using different feature set,
-which highlights the importance of certain significant features, such
-as HVAC power consumption. We have added a list at the end of Section
-\ref{sec:intro} to highlight our contribution and novelty.
+% Our work focuses on leveraging existing temperature sensoring
+% infrastructure for occupency detection in a buiding by 
+%  applying machine learning techniques, such as deep
+% recurrent neural networks.  The main benefit of the exsting method is
+% no need of additional This does not require explicitly
+% application-specific modeling.  Two machine learning methods are
+% thoroughly compared in terms of accuracy, using different feature set,
+% which highlights the importance of certain significant features, such
+% as HVAC power consumption. 
+
 
 \subsection{Answers to reviewer \#4's comments}
 \begin{verbatim}
@@ -328,9 +337,9 @@ Related works are not completely reviewed. More related works
 should be introduced to draw a big picture for the readers.
 \end{verbatim}
 
-Answer: Thanks for your support. Some more existing works have been reviewed
-and some more citations of related works have been added in the introduction
-Section \ref{sec:intro} of the revised manuscript.
+Answer: Thanks. We have reviewed more existing works and highlighted
+our contributations in light of those existing works in the introduction
+Section \ref{sec:intro} of this revision.
 
 %We extended a graph in Section \ref{sec:intro} to briefly describe
 %ANN (artificial nerual network) application in this area. We added one more
@@ -345,6 +354,8 @@ are given in the paper to explain the reason why the proposed
 approach can achieve better performance.
 \end{verbatim}
 
+(TODO: need to re-answer this question)!
+
 Answer: Comparing to the referencing result, the occupation detection
 performance is satisfactory, in terms of the detection accuracy. It is
 superior than others in the following aspects: 1) No explicit
@@ -353,8 +364,8 @@ which reduces the deployment effort and cost; 2) Machine learning
 methods are black-boxed and general which do not require explicit
 modeling.
 
-Introduction section was revised to reflect rationale of the
-proposed method.
+We have add this comparison analysis to reflect the rationale of the
+proposed method in Introduction section.
 
 \begin{verbatim}
 (3) How to select the optimal parameters of SVR and RNN? It is
@@ -363,7 +374,7 @@ on parameter selection.
 \end{verbatim}
 
 Answer: We have added some discussions about the feature selection in
-Section \ref{sec:feature_selection} of the revised manuscript. All the five thermal-related
+Section \ref{sec:feature_selection} of this revision. All the five thermal-related
 features should be used in order to achieve the highest detection accuracy.
 However, it is sometimes not practical to acquire all the information,
 such as the lighting energy, as described. In such situation, we can
@@ -384,7 +395,9 @@ in the experiment result section.
 of this paper by using 3 to 5 brief bullet points.
 \end{verbatim}
 
-Answer: We have added a list at the end of introduction section.
+Answer: Thanks for the suggestion. We have added a new list of major
+contribuations at the end of introduction section to make our
+contribuation more clear.
 
 
 \begin{verbatim}
@@ -395,4 +408,4 @@ I think the extension has enough material to be considered for
 publication in TODAES.
 \end{verbatim}
 
-Answer: Thanks. We have deleted some redundant explanations in the revised manuscript.
+Answer: Thanks. We have deleted some redundant explanations in this revision.
