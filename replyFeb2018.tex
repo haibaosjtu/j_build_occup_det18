@@ -354,9 +354,17 @@ are given in the paper to explain the reason why the proposed
 approach can achieve better performance.
 \end{verbatim}
 
-(TODO: need to re-answer this question)!
+%(TODO: need to re-answer this question)!--answered
+Answer: Since SVR has great generalization ability and can guarantee to find the global minimum,
+SVR can perform well for time series analysis for occupancy detection. A recurrent
+neural network (RNN) can also be used for a time series prediction problem as the data
+configuration for RNN includes time steps. The most important features related to occupancy
+behavior in a building are applied in the machine learning methods. These features covers 
+all major thermal-related aspects to be coupled with the human activity. As a result, 
+occupancy behavior can be determined theoretically by using the machine learning methods
+with time series analysis.  
 
-Answer: Comparing to the referencing result, the occupation detection
+Besides, comparing to the referencing result, the occupation detection
 performance is satisfactory, in terms of the detection accuracy. It is
 superior than others in the following aspects: 1) No explicit
 requirement of body-detection devices, such as infrared detector,
