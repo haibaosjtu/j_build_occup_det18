@@ -171,7 +171,7 @@ of SVR model by using different numbers of features. To find a better
 performance model, we set $C$ to be 100, 500, and 1000, respectively.
 Simulation results show that the SVR model tends to become more complex when
 the value of $C$ becomes larger, hence the goal of optimizing the SVR model is
-to find the value of $C$ that is one better tradeoff between under-fitting and
+to find the value of $C$ that is one better trade-off between under-fitting and
 over-fitting. For the 5-feature model, it can be seen that the SVR model can
 obtain better performance for occupancy detection when the value of $C$ varies
 in the range from 10 to 1000.
@@ -179,7 +179,7 @@ in the range from 10 to 1000.
 The two sets of features provide different convenience in detecting to meet
 different demand. The first set of features  can be relatively easily acquired
 while the second set requests more efforts. The first set of feature only
-requires data set that can be obtained from mathematic computation, whereas the
+requires data set that can be obtained from mathematical computation, whereas the
 second set  requires light energy which is a set of statistics that needs more
 effort to achieve. In terms of practical application, it is suggested to choose
 the one that meets demand and gives the best convenience. However, further
@@ -232,7 +232,7 @@ respectively each room's estimated people occupancy.
 In practical smart-building applications, room temperatures are easy to acquire
 from the installed sensors. Ambient temperature, solar factors are also
 relatively easier to be acquired or calculated. While other factors, such as
-HVAC colling or heating powers, electrical equipment powers and air
+HVAC cooling or heating powers, electrical equipment powers and air
 infiltrations, need more instruments to per-room estimate in real-time. Because
 of these limitations, we select two different sets of real-world factors as the
 network input and compare the occupancy evaluation accuracy:
@@ -411,13 +411,13 @@ are generated based on the same features and number of data, which
 means, the different results shown in the figure are only influenced
 by the models. From the figure, we can see that the results from both
 methods agree well with the original curves.  Furthmore, we obseve
-there is a small fluctuation in Max. error when the SVR model is
+there is a small fluctuation in Max.~error when the SVR model is
 applied. This indicates the maximum error of the SVR model will stay
 at a stable range when the features of the model are slightly
-changed. In comparison, Max. error of the RNN model is relatively more
-sensitive. The Max. error may double, triple, or rapidly diminishes
+changed. In comparison, Max.~error of the RNN model is relatively more
+sensitive. The Max.~error may double, triple, or rapidly diminishes
 when the features of the model is changed. This phenomenon is also
-observed in the Avg. error. The numeric value of Avg. error swings
+observed in the Avg.~error. The numeric value of Avg.~error swings
 more for the RNN model than for the SVR model under the situation that
 the features are changed. This could imply the two different
 characteristic behaviors of the two models, which gives the user the
@@ -441,7 +441,7 @@ than 96\%.}
     \label{fig:accuracy-comparison}
 \end{figure}
 
-\textcolor{feb18rev}{We remarke that since SVR has great
+\textcolor{feb18rev}{We remark that since SVR has great
   generalization ability and can guarantee to find the local minimum,
   SVR can perform well for time series analysis for occupancy
   detection. RNN can also be used for a time series prediction problem
