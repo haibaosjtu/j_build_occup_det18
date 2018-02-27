@@ -68,17 +68,20 @@ of features are apparently displayed from the results shown in this
 table. Numerical simulation shows that $\varepsilon$ being equivalent
 to 0.01 is a reliable choice for this SVR-based occupancy model. At
 each sample point, the estimation error ${e_i}$ is defined as
-${e_i} = \left| {O_i^{SVR} - O_i^{EP}} \right|$ where $O_i^{SVR}$
+${e_i} = \left| {O_i^{\textrm{SVR}} - O_i^{\textrm{EP}}} \right|$ where $O_i^{\textrm{SVR}}$
 denotes the occupancy value obtained by the proposed SVR model and
-$O_i^{EP}$ denotes the real value of occupancy generated from EnergyPlus. We calculate the average error and the error rate by
+$O_i^{\textrm{EP}}$ denotes the real value of occupancy generated from EnergyPlus. We calculate the average error and the error rate by
 $\frac{1}{n}\sum\nolimits_n {{e_i}}$ and
-$\frac{{Average{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt}
-    error}}{{full{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt}
-    occupancy}}$,
+$\frac{\text{average error}}{\text{full occupancy}}$,
 respectively. Also, in this table different values of $C$ are tested
 to seek out an accurate model for occupancy detection.
 
-Table \rom{2} shows the validation error statistics of the proposed SVR model. The reason why the 5-feature model performs even better than the 4-feature model for occupancy detection is that the 4-feature model suffers slightly in under-fitting issue which results in a high bias. It is important to determine the parameters which can maintain a balance between under-fitting and over-fitting.
+Table \rom{2} shows the validation error statistics of the proposed SVR model.
+The reason why the 5-feature model performs better than the 4-feature
+model for occupancy detection is that the 4-feature model suffers slightly in
+under-fitting issue which results in a high bias. It is important to determine
+the parameters which can maintain a balance between under-fitting and
+over-fitting.
 
 
 \subsubsection{Analysis}
@@ -150,7 +153,7 @@ In this part of the section, the process of achieving the best model we build
 is revealed, and several figures of performance for models are displayed to
 have a direct comparison for the model under different number of figures. The
 figures mainly display the accuracy when applying 4 features or 5 features in
-the model, and offers a vivid comparison in those figures.
+the model, and offers a clear comparison in those figures.
 
 We now display the accuracy of applying 4 features or 5 features in the
 proposed SVR model. To obtain the best parameter setting in the SVR model used
@@ -319,7 +322,7 @@ At every sample point, estimation error $e_i$ is calculated using
 $e_i=\left|p_i^{\text{RNN}}-p_i^{\text{EP}}\right|$, where
 $p_i^{\text{RNN}}$ is people occupancy estimated by the RNN and
 $p_i^{\text{EP}}$ is referencing value used in EnergyPlus. Note that we may
-have zero people in a room (the occupancy value $p_i^{EP} = 0$), so
+have zero people in a room (the occupancy value $p_i^\text{EP} = 0$), so
 no relative errors are used. Also, occupancy values can be
 non-integer numbers as the estimated number of people in a room is a
 average number in a period.
