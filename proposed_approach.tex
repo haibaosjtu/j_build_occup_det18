@@ -1,6 +1,10 @@
 \section{Proposed occupancy estimation approaches}
 \label{sec:proposed_methods}
-In this section we apply the SVR and RNN methods on occupancy estimation in a smart building that contains 5 zones. The whole smart building is simulated by using the energy simulation tool EnergyPlus. We will first discuss the principles based on the features used for detection and then conduct the data configuration used in the model for occupancy detection.
+In this section we apply the SVR and RNN methods on occupancy estimation in a
+smart building that contains 5 zones. The whole smart building is simulated by
+using the energy simulation tool EnergyPlus. We will first discuss the
+principles based on the features used for detection and then conduct the data
+configuration used in the model for occupancy detection.
 \subsection{Feature Selection}
 \label{sec:feature_selection}
 \begin{figure}[h]
@@ -13,7 +17,7 @@ In this section we apply the SVR and RNN methods on occupancy estimation in a sm
 \begin{figure}[h]
 \centering
 \includegraphics[width=4in]{./Pics/SideView.eps}
-\caption{The office model: side view.}
+\caption{The office model: perspective view.}
 \label{fig:office2}
 \end{figure}
 
@@ -31,19 +35,18 @@ In this section we apply the SVR and RNN methods on occupancy estimation in a sm
 \label{fig:feature}
 \end{figure}
 
-In the machine learning model we built for occupancy detection, we
-carefully selected 5 features each of which possesses some unique
-information hidden inside. The features are solar angle, indoor
-temperatures, outdoor temperatures, working time, and lights energy.
-Solar angle is believed to have periodic information which varies
-across the entire year, outdoor temperature is an apparent factor that
-impacts the indoor temperature, working time denotes whether regular
-working schedule is executed, and lights energy gives out a radiation
-metric that causes rise of the temperature.
+In the machine learning model we built for occupancy detection, we carefully
+selected 5 features each of which possesses some unique information hidden
+inside. The features are solar angle, indoor temperatures, outdoor
+temperatures, working time, and lights energy.  Solar angle is periodic and
+repeats every year. Outdoor temperature is an important thermal factor that
+impacts the indoor temperature. Working time denotes whether regular working
+schedule is executed, and lights energy gives out a radiation metric that
+causes rise of the temperature.
 
-Fig.~\ref{fig:office1} and Fig.~\ref{fig:office2} show the side view
+Fig.~\ref{fig:office1} and Fig.~\ref{fig:office2} show the perspective view
 and the top view of the building which contains five rooms and HVAC
-system by using the software EnergyPlus. This building can be
+system by using the software EnergyPlus. This building is
 influenced by heat sources produced from occupants, electric
 equipment, air filtration, etc. The weather (ambient temperature and
 solar effects) affects the room temperature as well. Through the HVAC
@@ -51,9 +54,10 @@ system with coil and fan, room temperature can be administered
 properly to ensure that a comfortable temperature in the environment
 can be produced in the room.
 
-In this room the solar angle ${\theta _s}$ is defined as the angle between the zenith and the centre of the sun disc
+In this room the solar angle ${\theta _s}$ is defined as the angle between the
+zenith and the centre of the sun disc
 \begin{equation}
-    \cos {\theta _s} = \sin \phi \sin \delta  + \cos \phi \cos \delta \cosh
+    \cos {\theta _s} = \sin \phi \sin \delta  + \cos \phi \cos \delta \cos h
 \end{equation}
 where $h$ is the hour angle in the local solar time, $\delta$ is the
 current declination of the sum, and $\phi$ is the local latitude. This
@@ -61,7 +65,7 @@ equation enables us to compute the feature solar angle and all the
 variables are correlated to the location of the building.
 
 Working time is a feature that determines if the time detected is
-local working time or not, and it apparently affect the number of
+local working time or not, and it apparently affects the number of
 working people in a certain office. It is also convenient to achieve
 schedule of an ordinary worker in an office within the building and it
 is a good feature contributing to the detection. When a feature is
@@ -72,28 +76,21 @@ schedule, which is a relatively data set to acquire. Therefore, the
 working time is chosen as a feature element in the feature pool, and
 it is even a basic feature owing to its convenience.
 
-Outdoor temperatures are off-the-rack data set collected from weather
-forecast which also are the inputs for EnergyPlus to generate indoor
-temperatures data as an output. Herein we use the outdoor
-temperature data set of the location of the building simulated by EnergyPlus, so as
-our simulated building model goes through the exact same weather
-conditioning the genuine building has gone through. Outdoor
-temperatures also plays an instrumental feature role in detection,
-because it directly influences the indoor temperature, which has a
-non-linear relationship with the number of employees in a certain
-office.
+Outdoor temperatures can be easily collected from public weather forecast. We
+use the outdoor temperature data set of the location of the building simulated
+by EnergyPlus, so as our simulated building model goes through the exact same
+weather conditioning the genuine building has gone through. Outdoor
+temperatures also plays an instrumental feature role in detection, because it
+directly influences the indoor temperature, which has a non-linear relationship
+with the number of employees in a certain office.
 
-The indoor temperature turns out to be one of the key features used in
-the detection model, to be more accurately, all of the factors
-including employee occupancy constitute the list of elements that
-results in the fluctuation of temperature inside the building. In
-essence, the approach to achieve the detection for a number of
-employee in a certain room is based on the contribution of heat
-emitted from different number of employees in a certain room. Owing to
-the fact that different number of employees gives out different amount
-of heat to impact the indoor temperature makes the approach viable to
-detect the occupancy combing other factors that affect the indoor
-temperature.
+The indoor temperature is one of the most important features used in the
+detection model. It is the result of the interaction of all thermal inputs and
+the necessary part of determining thermal consistency. Indoor temperature is
+simulated by EnergyPlus as a thermal system output, but is used as a key input
+in the occupancy detection. The proposed occupancy model essentially calculates
+the occupancy that meets the indoor temperature, which makes the thermal system
+consistent.
 
 Lights energy is the fifth feature in the feature pool, and it is
 different from the first four features. The first four features are quite
@@ -105,11 +102,13 @@ important metric related to the number of employees in a specific office
 as well. Aiming at provide a more accurate detection, the lights
 energy feature is incorporated into the feature pool.
 
-\textcolor{feb18rev}{As listed above, five main features are applied in the machine learning methods for occupancy detection. 
-These features covers all major thermal-related aspects to be coupled with the human activity, such that
+\textcolor{feb18rev}{As listed above, five main features are used in the
+machine learning methods for occupancy detection.  These features cover all
+major thermal-related aspects to be coupled with the human activity, such that
 occupancy can be determined theoretically. In order to investigate the impact
-of choosing different set of features and to improve the flexibility of practical
-deployment, different combination of features are used in the methods.}
+of choosing different set of features and to improve the flexibility of
+practical deployment, two different feature sets are used in the
+methods.}
 
 \subsection{Data Configuration}
 \begin{figure}[!h]
@@ -119,18 +118,15 @@ deployment, different combination of features are used in the methods.}
 \label{fig:SVRFlow}
 \end{figure}
 
-Fig.\ref{fig:SVRFlow} shows how EnergyPlus produces indoor temperature
-in a certain room specifically. EnergyPlus feeds off factors such as
-indoor temperature, solar factor, electrical factor, light factor,
-infiltration, infrared, and people occupancy before it produces indoor
-temperature as an output using built-in methods and methods in
-accordance with its inputs. Of all those features taken into the
-method, indoor temperature is the key feature because it is directly
-impacted by the increase or drop in the number of employees in a
-certain office.
+Fig.\ref{fig:SVRFlow} shows how EnergyPlus predicts occupancy in a room. The
+machine learning model takes indoor temperature as one of its inputs. This
+requires us to use EnergyPlus to calculate the indoor temperature using the
+thermal inputs, including people occupancy. Then we take selected features and
+indoor temperature as training inputs, real occupancy as training output, to
+perform model training.
 
 In general, the machine learning model takes the selected parameters
-as its features to train the data and yield results. It is highlighted
+as its features to train the model and yield results. It is highlighted
 that the relationship between occupancy and other factors are
 non-linear related, where SVR and RNN are good choices to
 solve a non-linear problem used for detection. Machine learning methods are
@@ -168,19 +164,19 @@ nonlinear problem for occupancy detection.
 %or obtained through mathematical calculation, thus further experiments
 %are likely to be conducted in real-life data condition.
 
-\textcolor{feb18rev}{In the proposed machine learning model, two features sets are provided
-for occupancy detection in a building. The first set is comprised of features such as solar factor,
-working time, indoor temperature and outdoor temperature, which can be acquired through sole mathematic computation and
-EnergyPlus simulation.} It is relatively convenient to obtain all the
-features required in the first feature set. However, we introduce one
-more feature in the second feature set, light factor, to enhance the
-accuracy of model. Light factor requires the model to learn overall
-energy that light consumes during a certain quantity of time which is
-a comparatively inconvenient feature to obtain, however, it is capable
-of making the detection more accurate. It is also highlighted here
-that all of the data we feed in the model is generated from EnergyPlus
-or obtained through mathematical calculation, thus further experiments
-are likely to be conducted in real-life data condition.
+\textcolor{feb18rev}{In the proposed machine learning model, two features sets
+are provided for occupancy detection in a building. The first set is comprised
+of features such as solar factor, working time, indoor temperature and outdoor
+temperature, which can be acquired through sole mathematic computation and
+EnergyPlus simulation.} It is relatively convenient to obtain all the features
+required in the first feature set. However, we introduce one more feature in
+the second feature set, light factor, to enhance the accuracy of model. Light
+factor requires the model to learn overall energy that light consumes during a
+certain quantity of time which is a comparatively inconvenient feature to
+obtain, however, it is capable of making the detection more accurate. It is
+also highlighted here that all of the data we feed in the model is generated
+from EnergyPlus or obtained through mathematical calculation, thus further
+experiments are likely to be conducted in real-life data condition.
 
 For separating the whole data set, we split the one-year simulation
 data into twelve months and three time periods, in which the months
