@@ -1,19 +1,19 @@
 \section{EnergyPlus based simulation for smart buildings}
 \label{sec:energy_plus_review}
 \textcolor{feb18rev}{In this section, we review the EnergyPlus software program, which provides
-accurate input and output traces from buildings for the new thermal
-modeling algorithm.}
+accurate input and output traces from buildings for validation of the new
+thermal modeling algorithms.}
 
-The EnergyPlus software package is a suite of algorithms that calculate the
+EnergyPlus software package is a suite of algorithms that calculate the
 energy required to operate a building and its resulting thermal behavior based
 on numerous considerations ranging from the specifications of the structure, to
-heat sources and sinks within the building, and weather. EnergyPlus consists of
+heat sources and sinks within the building. EnergyPlus consists of
 an integrated solution manager that manages the calculation of the heat balance
-of various surfaces in the building, the heat balance of the air, and the heat
-balance on the mechanical systems. The solution to each of these three elements
-is calculated separately and communicated to each other using the manager at
+of various surfaces in a simulated building, its mechnical systems, and the air.
+The solutions to each of these three elements
+are calculated separately and loosely coupled to each other using the manager at
 each time-step. Due to its modularity, it is easy to establish links to other
-programs such as Google SketchUp for 3D building display.
+programs such as Google SketchUp for 3D modeling and visualization.
 \textcolor{feb18rev}{EnergyPlus has been proven as a successful energy
 simulation program with widely-accepted accuracy for modern buildings
 \cite{yang2016review}: among all it's applications, for instance, it has been
@@ -23,7 +23,7 @@ used as a kernel of high level building energy and control systems test bed
 experiments, using EnergyPlus to test and simulate the proposed models is
 therefore valid, with a state of art simulation accuracy, which was a major
 pain point in the past. On the other hand, using EnergyPlus allows the authors
-to efficiently choose from a variety of buildings to test on, and easily
+to efficiently choose from a variety of buildings to test on, and to easily
 configure energy inputs.}
 
 An input data file (IDF) and weather file are needed for the EnergyPlus
@@ -38,8 +38,8 @@ Fig.~\ref{fig:5zone} shows the side view of an office building
 with 5 rooms and HVAC modeled in EnergyPlus. The heat sources for this building
 can be HVAC, light, occupants, electric equipment, air filtration, etc. The
 room temperature is also affected by the weather (ambient temperature and solar
-effects) and can be controlled by the HVAC system with coil
-and fan.
+factors) and can be controlled by the HVAC system with coils
+and fans.
 
 \begin{figure}[t]
     \centering
@@ -52,8 +52,8 @@ Fig.~\ref{fig:energyplus-io-curve} shows the simulated temperature changes and
 input changes over 15 days from EnergyPlus for an office building with the 5 zones
 (rooms), as shown in Fig.~\ref{fig:5zone}. EnergyPlus can assign different schedules
 for each room while simulating the thermal model.
-Fig.~\ref{fig:occupancy-curve} shows a typical working schedule of the 5 rooms
-of the office building.
+Fig.~\ref{fig:occupancy-curve} shows a typical working schedule of the 5-room
+office building.
 
 \begin{figure}[t]
     \includegraphics[width=0.9\columnwidth]{figs/energyplus_review/energyplus}
