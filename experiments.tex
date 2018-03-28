@@ -7,49 +7,46 @@ different number of features in this model.
 
 \subsubsection{Experiments}
 \begin{table}[!h]
-\centering
-    \begin{tabular}{lrrcrrcrr}
-        \toprule
-            & \multicolumn{2}{c}{$C=100$} && \multicolumn{2}{c}{$C=500$} && \multicolumn{2}{c}{$C=1000$} \\
-        \cmidrule{2-3} \cmidrule{5-6} \cmidrule{8-9}
-        \#Features &   \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} && \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} && \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5}  \\
-        \midrule
-        Avg. error&0.721& 0.310   && 0.576 &  0.326   &&  0.550  &  0.348        \\
-        Error~rate&31.1\%& 8.56\%  && 18.8\% &  8.89\%  &&  18.1\%  &  12.4\%        \\
-        \bottomrule
-    \end{tabular}
-\caption{\textcolor{feb18rev}{Training errors of SVR model using different numbers of features.}}
 \label{table:training}
+\caption{Training error statistics of SVR model using different numbers of features.}
+\centering
+\begin{tabular}{m{1.2cm}m{0.8cm}m{0.8cm}m{0.8cm}m{0.8cm}m{0.8cm}m{0.8cm}}
+\hline
+& \multicolumn{2}{c}{$C$=100} & \multicolumn{2}{c}{$C$=500} & \multicolumn{2}{c}{$C$=1000} \\
+\cline{2-7}
+Features &   \hspace{0.2cm} 4  &\hspace{0.2cm}   5  &\hspace{0.2cm}   4  &\hspace{0.2cm}   5  &\hspace{0.2cm}   4  & \hspace{0.2cm}  5  \\
+\hline
+Avg. error&0.721& 0.310   & 0.576 &  0.326   &  0.550  &  0.348        \\
+Err. ratio&0.311& 0.0856  & 0.188 &  0.0889  &  0.181  &  0.124        \\
+\hline
+\end{tabular}
 \end{table}
+
+
 \begin{table}[!h]
-    \centering
-    \begin{tabular}{lrrcrrcrr}
-        \toprule
-            & \multicolumn{2}{c}{$C=100$} && \multicolumn{2}{c}{$C=500$} && \multicolumn{2}{c}{$C=1000$} \\
-        \cmidrule{2-3} \cmidrule{5-6} \cmidrule{8-9}
-        \#Features &   \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} && \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} && \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5}  \\
-        \midrule
-        Avg.~error&0.819& 0.317   && 0.694  &  0.330   &&  0.638  &  0.390        \\
-        Error~rate&6.80\%& 2.64\%  && 5.78\% &  2.74\%  &&  5.32\%  &  3.25\%        \\
-        \bottomrule
-    \end{tabular}
-    \caption{\textcolor{feb18rev}{Validation errors of SVR model using different numbers
-    of features.}}
-    \label{table:testing}
+\label{table:testing}
+\caption{Validation error statistics of SVR model using different numbers of features.}
+\centering
+\begin{tabular}{m{1.2cm}m{0.8cm}m{0.8cm}m{0.8cm}m{0.8cm}m{0.8cm}m{0.8cm}}
+\hline
+& \multicolumn{2}{c}{$C$=100} & \multicolumn{2}{c}{$C$=500} & \multicolumn{2}{c}{$C$=1000} \\
+\cline{2-7}
+Features &   \hspace{0.2cm} 4  &\hspace{0.2cm}   5  &\hspace{0.2cm}   4  &\hspace{0.2cm}   5  &\hspace{0.2cm}   4  & \hspace{0.2cm}  5  \\
+\hline
+Avg. error&0.819& 0.317   & 0.694 &  0.330   &  0.638  &  0.390        \\
+Err. ratio&0.068& 0.0264  & 0.0578 &  0.0274  &  0.0532  &  0.0325        \\
+\hline
+\end{tabular}
 \end{table}
 
 We evaluate the SVR detection model using
 testing data set. Through a wide range of experiments, we learn radial
 basis function kernel also known as Gaussian kernel works best in this
-model. \textcolor{feb18rev}{The two most important parameters in SVR model 
-are the penalty $C$ and the radius $\varepsilon$. For the confidence penalty,
-the grid search algorithm \cite{Hsu2003} is performed for finding a confidence
-penalty weight to work best.}
-%The two most important parameters in SVR model are penalty $C$ and radius $\varepsilon$,
-%where plenty of tests are conducted to obtain
-%a good set of parameter, hence, we experiment different values of $C$
-%and $\varepsilon$ hoping to obtain the best. 
-It is widely known that to get an accurate performance in SVR model or any other machine
+model. The two most important parameters in SVR model are penalty $C$
+and radius $\varepsilon$, where plenty of tests are conducted to obtain
+a good set of parameter, hence, we experiment different values of $C$
+and $\varepsilon$ hoping to obtain the best. It is widely known that
+to get an accurate performance in SVR model or any other machine
 learning methods, the best approach is to enumerate a quantity of
 combinations of parameters, and conduct experiments to drive the
 result toward a better trend. During the process of seeking out the
@@ -68,20 +65,17 @@ of features are apparently displayed from the results shown in this
 table. Numerical simulation shows that $\varepsilon$ being equivalent
 to 0.01 is a reliable choice for this SVR-based occupancy model. At
 each sample point, the estimation error ${e_i}$ is defined as
-${e_i} = \left| {O_i^{\textrm{SVR}} - O_i^{\textrm{EP}}} \right|$ where $O_i^{\textrm{SVR}}$
+${e_i} = \left| {O_i^{SVR} - O_i^{EP}} \right|$ where $O_i^{SVR}$
 denotes the occupancy value obtained by the proposed SVR model and
-$O_i^{\textrm{EP}}$ denotes the real value of occupancy generated from EnergyPlus. We calculate the average error and the error rate by
+$O_i^{EP}$ denotes the real value of occupancy generated from EnergyPlus. We calculate the average error and the error ratio by
 $\frac{1}{n}\sum\nolimits_n {{e_i}}$ and
-$\frac{\text{average error}}{\text{full occupancy}}$,
+$\frac{{Average{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt}
+    error}}{{full{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt}
+    occupancy}}$,
 respectively. Also, in this table different values of $C$ are tested
 to seek out an accurate model for occupancy detection.
 
-Table \rom{2} shows the validation error statistics of the proposed SVR model.
-The reason why the 5-feature model performs better than the 4-feature
-model for occupancy detection is that the 4-feature model suffers slightly in
-under-fitting issue which results in a high bias. It is important to determine
-the parameters which can maintain a balance between under-fitting and
-over-fitting.
+Table \rom{2} shows the validation error statistics of the proposed SVR model. The reason why the 5-feature model performs even better than the 4-feature model for occupancy detection is that the 4-feature model suffers slightly in under-fitting issue which results in a high bias. It is important to determine the parameters which can maintain a balance between under-fitting and over-fitting.
 
 
 \subsubsection{Analysis}
@@ -101,9 +95,7 @@ over-fitting.
 (b) 5 features.
 \end{minipage}
 \hfill
-\caption{\textcolor{feb18rev}{Occupancy estimation accuracy when $C$ equals 100 using SVR with 4
-    features and 5 features. X-axis spans over 360 hours (15 days), sampled
-    hourly.}}\label{fig:compare1}
+\caption{Occupancy estimation accuracy when $C$ equals 100 using SVR with 4 features and 5 features.}\label{fig:compare1}
 \end{figure}
 
 \begin{figure}[h]
@@ -122,9 +114,7 @@ over-fitting.
 (b) 5 features.
 \end{minipage}
 \hfill
-\caption{\textcolor{feb18rev}{Occupancy estimation accuracy when $C$ equals 500 using SVR with 4
-    features and 5 features. X-axis spans over 360 hours (15 days), sampled
-    hourly.}}\label{fig:compare2}
+\caption{Occupancy estimation accuracy when $C$ equals 500 using SVR with 4 features and 5 features.}\label{fig:compare2}
 \end{figure}
 
 \begin{figure}[h]
@@ -143,57 +133,17 @@ over-fitting.
 (b) 5 features.
 \end{minipage}
 \hfill
-\caption{\textcolor{feb18rev}{Occupancy estimation accuracy when $C$ equals 1000 using SVR with 4
-    features and 5 features. X-axis spans over 360 hours (15 days), sampled
-    hourly.}}\label{fig:compare3}
+\caption{Occupancy estimation accuracy when $C$ equals 1000 using SVR with 4 features and 5 features.}\label{fig:compare3}
 \end{figure}
 
 
-In this part of the section, the process of achieving the best model we build
-is revealed, and several figures of performance for models are displayed to
-have a direct comparison for the model under different number of figures. The
-figures mainly display the accuracy when applying 4 features or 5 features in
-the model, and offers a clear comparison in those figures.
+In this part of the section, the process of achieving the best model we build is revealed, and several figures of performance for models are displayed to have a direct comparison for the model under different number of figures. The figures mainly display the accuracy when applying 4 features or 5 features in the model, and offers a vivid comparison in those figures.
 
-We now display the accuracy of applying 4 features or 5 features in the
-proposed SVR model. To obtain the best parameter setting in the SVR model used
-for occupancy detection, we need to constantly compare the gap between the
-training and testing errors for the collected data sets by EnergyPlus. If the
-gap of accuracy between training and testing errors are relatively large, which
-means that this model is over-fitting on the training data. In accuracy on
-training data implies that the model has a potential under-fitting. In this
-situation, we need to adjust parameters to make the SVR-based model work
-better.
+We now display the accuracy of applying 4 features or 5 features in the proposed SVR model. To obtain the best parameter setting in the SVR model used for occupancy detection, we need to constantly compare the gap between the training and testing errors for the collected data sets by EnergyPlus. If the gap of accuracy between training and testing errors are relatively large, which means that this model is over-fitting on the training data. In accuracy on training data implies that the model has a potential under-fitting. In this situation, we need to adjust parameters to make the SVR-based model work better.
 
-We randomly pick out a 15-day period from the testing data set and compare it
-to the genuine value generated by EnergyPlus. Large number of experiments in
-this proposed SVR model shows that 0.01 is a stable-performing value for
-$\varepsilon$. Fig. \ref{fig:compare1}, Fig. \ref{fig:compare2}, and Fig.
-\ref{fig:compare3} show the simulation results of occupancy detection accuracy
-of SVR model by using different numbers of features. To find a better
-performance model, we set $C$ to be 100, 500, and 1000, respectively.
-Simulation results show that the SVR model tends to become more complex when
-the value of $C$ becomes larger, hence the goal of optimizing the SVR model is
-to find the value of $C$ that is one better trade-off between under-fitting and
-over-fitting. For the 5-feature model, it can be seen that the SVR model can
-obtain better performance for occupancy detection when the value of $C$ varies
-in the range from 10 to 1000.
+We randomly pick out a 15-day period from the testing data set and compare it to the genuine value generated by EnergyPlus. Large number of experiments in this proposed SVR model shows that 0.01 is a stable-performing value for $\varepsilon$. Fig. \ref{fig:compare1}, Fig. \ref{fig:compare2}, and Fig. \ref{fig:compare3} show the simulation results of occupancy detection accuracy of SVR model by using different numbers of features. To find a better performance model, we set $C$ to be 100, 500, and 1000, respectively. Simulation results show that the SVR model tends to become more complex when the value of $C$ becomes larger, hence the goal of optimizing the SVR model is to find the value of $C$ that is one better tradeoff between under-fitting and over-fitting. For the 5-feature model, it can be seen that the SVR model can obtain better performance for occupancy detection when the value of $C$ varies in the range from 10 to 1000.
 
-The two sets of features provide different convenience in detecting to meet
-different demand. The first set of features  can be relatively easily acquired
-while the second set requests more efforts. The first set of feature only
-requires data set that can be obtained from mathematical computation, whereas the
-second set  requires light energy which is a set of statistics that needs more
-effort to achieve. In terms of practical application, it is suggested to choose
-the one that meets demand and gives the best convenience. However, further
-improvement can be considered by building model revolving around absorbing the
-current data set into the SVR model, which makes the model work as a dynamic
-equation that is able to self-improved by newly absorbed data set and remain
-more effectively according to the current circumstance. Most importantly, it is
-suggested to choose the most efficient approach based on the facing situation,
-after all, the model is able to fulfill ordinary demand in accuracy in
-4-feature model. Further improvement is likely to happen if one considers
-specific conditions for other office in detail.
+The two sets of features provide different convenience in detecting to meet different demand. The first set of features  can be relatively easily acquired while the second set requests more efforts. The first set of feature only requires data set that can be obtained from mathematic computation, whereas the second set  requires light energy which is a set of statistics that needs more effort to achieve. In terms of practical application, it is suggested to choose the one that meets demand and gives the best convenience. However, further improvement can be considered by building model revolving around absorbing the current data set into the SVR model, which makes the model work as a dynamic equation that is able to self-improved by newly absorbed data set and remain more effectively according to the current circumstance. Most importantly, it is suggested to choose the most efficient approach based on the facing situation, after all, the model is able to fulfill ordinary demand in accuracy in 4-feature model. Further improvement is likely to happen if one considers specific conditions for other office in detail.
 
 \subsection{RNN Based Occupancy Detection}
 \label{sec:rnn-method}
@@ -204,7 +154,7 @@ Fig.~\ref{fig:elman} to the occupancy of each room in a certain smart building.
 \subsubsection{Experiments}
 EnergyPlus takes outdoor thermal factors (such as ambient temperatures and solar
 factors), people occupancy and HVAC related powers as input, and produce the
-temperatures of rooms as its output. People occupancy is in unit of number of
+temperatures of rooms as it's output. People occupancy is in unit of number of
 people, which maybe decimal as it represents average people count over a short
 time span. We treat all the data used and produced by EnergyPlus equally as
 real-world factors, regardless they were inputs or outputs of EnergyPlus. In the
@@ -235,7 +185,7 @@ respectively each room's estimated people occupancy.
 In practical smart-building applications, room temperatures are easy to acquire
 from the installed sensors. Ambient temperature, solar factors are also
 relatively easier to be acquired or calculated. While other factors, such as
-HVAC cooling or heating powers, electrical equipment powers and air
+HVAC colling or heating powers, electrical equipment powers and air
 infiltrations, need more instruments to per-room estimate in real-time. Because
 of these limitations, we select two different sets of real-world factors as the
 network input and compare the occupancy evaluation accuracy:
@@ -280,9 +230,7 @@ Conf. I: Ambient factors and room temperatures.
 Conf. II: Ambient factors, room temperatures and HVAC powers.
 \end{minipage}
 \hfill
-    \caption{\textcolor{feb18rev}{Occupancy estimation accuracy using one-layer recurrent neural
-    network with input configurations I and II. X-axis
-    spans over 384 hours (16 days), sampled hourly.}}\label{fig:one-layer}
+\caption{Occupancy estimation accuracy using one-layer recurrent neural network with input configurations I and II.}\label{fig:one-layer}
 \end{figure}
 
 \begin{figure}[h]
@@ -302,9 +250,7 @@ Conf. I: Ambient factors and room temperatures.
 Conf. II: Ambient factors, room temperatures and HVAC powers.
 \end{minipage}
 \hfill
-\caption{\textcolor{feb18rev}{Occupancy estimation accuracy using two-layer recurrent neural network
-    with input configurations I and II. X-axis spans over
-    384 hours (16 days), sampled hourly.}}\label{fig:two-layer}
+\caption{Occupancy estimation accuracy using two-layer recurrent neural network with input configurations I and II.}\label{fig:two-layer}
 \end{figure}
 
 
@@ -322,7 +268,7 @@ At every sample point, estimation error $e_i$ is calculated using
 $e_i=\left|p_i^{\text{RNN}}-p_i^{\text{EP}}\right|$, where
 $p_i^{\text{RNN}}$ is people occupancy estimated by the RNN and
 $p_i^{\text{EP}}$ is referencing value used in EnergyPlus. Note that we may
-have zero people in a room (the occupancy value $p_i^\text{EP} = 0$), so
+have zero people in a room (the occupancy value $p_i^{EP} = 0$), so
 no relative errors are used. Also, occupancy values can be
 non-integer numbers as the estimated number of people in a room is a
 average number in a period.
@@ -331,7 +277,7 @@ In Table~\ref{tab:terr-stat} and Table~\ref{tab:verr-stat}, average
 error is calculated using $\frac1n\sum_ne_i$; maximum error is
 calculated using $\max\{e_i\}$; error rate is the number of points
 where $e_i>0.5$. We discuss the estimation accuracy separately about
-data configurations I and II.
+data configuration I and II.
 
 \begin{table}[t]
     \centering
@@ -349,8 +295,8 @@ data configurations I and II.
         \bottomrule
     \end{tabular}
     \endgroup
-    \caption{\textcolor{feb18rev}{Training errors of three Elman architectures using two
-        different input configurations.}}
+    \caption{Training error statistics of three Elman architectures using two
+        different input configurations.}
     \label{tab:terr-stat}
 \end{table}
 
@@ -370,8 +316,8 @@ data configurations I and II.
         \bottomrule
     \end{tabular}
     \endgroup
-    \caption{\textcolor{feb18rev}{Validation errors of three Elman architectures using two
-        different input configurations.}}
+    \caption{Validation error statistics of three Elman architectures using two
+        different input configurations.}
     \label{tab:verr-stat}
 \end{table}
 
@@ -393,8 +339,6 @@ were observed in the one-year data). As network size grows (up to 3),
 the estimation error grows (0.38\%), but stays in acceptable level.
 
 \subsection{Comparison Between SVR and RNN}
-\label{sec:comparison_svr_rnn}
-
 \begin{figure}[!h]
 \centering
 \includegraphics[width=5in]{./Pics/comparison.eps}
@@ -402,11 +346,8 @@ the estimation error grows (0.38\%), but stays in acceptable level.
 \label{fig:comparison}
 \end{figure}
 
-%In this section, we compare the accuracy and characteristics of the
-%occupancy detection result respectively from SVR and RNN.
-\textcolor{feb18rev}{In this section, we compare the accuracy and characteristics of the
-occupancy detection result respectively from SVR and RNN. It should be noted that the same
-features are used for the two different models in order to make a fare comparison.}
+In this section, we compare the accuracy and characteristics of the
+occupancy detection result respectively from SVR and RNN.
 Fig.~\ref{fig:comparison} shows the result in which the black curve
 stands for the original outcome, the red curve stands for the SVR
 outcome, and the blue curve stands for the RNN outcome.  Those results
@@ -414,45 +355,20 @@ are generated based on the same features and number of data, which
 means, the different results shown in the figure are only influenced
 by the models. From the figure, we can see that the results from both
 methods agree well with the original curves.  Furthmore, we obseve
-there is a small fluctuation in Max.~error when the SVR model is
+there is a small fluctuation in Max. error when the SVR model is
 applied. This indicates the maximum error of the SVR model will stay
 at a stable range when the features of the model are slightly
-changed. In comparison, Max.~error of the RNN model is relatively more
-sensitive. The Max.~error may double, triple, or rapidly diminishes
+changed. In comparison, Max. error of the RNN model is relatively more
+sensitive. The Max. error may double, triple, or rapidly diminishes
 when the features of the model is changed. This phenomenon is also
-observed in the Avg.~error. The numeric value of Avg.~error swings
+observed in the Avg. error. The numeric value of Avg. error swings
 more for the RNN model than for the SVR model under the situation that
 the features are changed. This could imply the two different
 characteristic behaviors of the two models, which gives the user the
 flexibility to apply for those two models. The SVR model is used when
 the features of a model will change from every now and then, in order
-to keep the detection precision at a stable range. The RNN model is applied
-when features are not changed in a real context, which possess a even higher
-precision in detecting occupancy compared to SVR.
-\textcolor{feb18rev}{Comparing to 92\% detection accuracy in \cite
-{dong2014real}, as shown in Figure \ref{fig:accuracy-comparison}, moderately
-configured SVR and RNN models can achieve occupancy detection accuracy higher
-than 96\%.}
+to keep the detection precision at a stable range. The RNN model is
+applied when features are not changed in a real context, which possess
+a even higher precision in detecting occupancy compared to SVR.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{./figs/results/results_compare.eps}
-    \caption{\textcolor{feb18rev}{Occupancy detection accuracy using SVR and
-    RNN. (Explanation for the X-axis labels: subscript and superscript of RNN
-    denotes number of hidden layers and awareness of HVAC; subscript and
-    superscript of SVR denotes number of features and $C$ value.)}}
-    \label{fig:accuracy-comparison}
-\end{figure}
-
-\textcolor{feb18rev}{We remark that since SVR has great
-  generalization ability and can guarantee to find the local minimum,
-  SVR can perform well for time series analysis for occupancy
-  detection. RNN can also be used for a time series prediction problem
-  as the data configuration for RNN includes time steps. The most
-  important features related to occupancy behavior in a building are
-  used in the machine learning methods. These features covers all
-  major thermal-related aspects to be coupled with the human
-  activity. As a result, occupancy behavior can be accurately
-  determined by using the selected machine learning methods with time
-  series analysis.}
 
