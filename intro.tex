@@ -1,247 +1,163 @@
-\documentclass[acmtodaes,notfinal]{acmtrans2m}
+\section{Introduction}
+\label{sec:intro}
+Building takes an instrumental role in energy consumption and smartness of a
+building has a large impact on its inhabitants. According to
+statistics provided by US Department of Energy, more than 70\% of electricity
+has been consumed by buildings every year \cite{doe_annual}. Recent efforts
+have been poured into the awareness of
+improving efficiency in quite a few facets, e.g., heating, ventilation, air
+conditioning (HVAC) system \cite{erickson2009energy}\cite{gao2009selfprog},
+lighting\cite{delaney2009eval}, IT (Information Technology) energy consumption management within
+buildings\cite{agarwal2009augnet}\cite{agarwal2010sleep}, etc. Amongst the
+overall energy usage of various aspects of buildings, the efficiency of HVAC
+systems has a tremendous impact on energy consumption \cite{hobby2012analysis}.
+On the contrary, some buildings utilizing scheduled-based
+programmable thermostats may consume more energy than ones without using smart
+devices, when actual occupancy deviates from the programmed schedule
+\cite{bias1999elec}. Automatic thermostat control systems have been developed
+in different approaches \cite{thomas2012intelligent}\cite{lu2012eval}, and
+plenty of techniques are applied in the course of building the systems.
 
-\usepackage{array}
-\usepackage{multirow}
-\usepackage{subfigure}
-\makeatletter
-\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
-\makeatother
-\usepackage{tabu}
-\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+Detecting the occupancy (i.e. existence or number of residents) in a building or a
+room has applications ranging from energy reduction to security monitoring. For
+instance, occupancy detection is critical for energy and comfort management
+system in a smart building~\cite{Nguyen2013Energy}.  Using the occupancy
+information, HVAC and lighting can be automatically controlled to reduce energy
+consumption while human comfortness is maintained. Energy consumption optimization can
+achieve higher quality with knowledge of real-time building occupancy
+\cite{majumdar2014energy}. Previous research shows that energy
+can be saved by 28\% by automatically sensing occupancy and turning off HVAC
+when a room or building is not occupied~\cite{Lu:SenSys10}.
 
-\usepackage{epstopdf}
-\epstopdfsetup{update}
-\usepackage{epstopdf-base}
+Due to the importance of detecting building occupancy, many methods
+have been proposed in the past. The most widely used method is by
+means of motion detection (using different techniques such as infrared,
+RF, sounds, vibrations magnetism etc), which can detect whether there is
+person or not. But motion detection in general can not tell how many
+persons in a room.  Other methods include passive infrared
+sensors~\cite{Dodier2006Building}, wireless camera sensor network
+\cite{erickson2009energy}, and applying sound level, case temperature,
+carbon-dioxide ($CO_2$) and motion to estimate occupancy
+number~\cite{Ekwevugbe2013Real}.  Preheat \cite{scott2011ctrl} built
+rooms with active radio frequency identification (RFID) and sensors to
+detect home occupancy. Mozer \cite{mozer1997neurothermostat} proposed
+a neural network method by using the history data from embedded motion
+sensors and active RFID to explore occupancy rate. Thermostat
+\cite{lu2010smartthermostat} also devoted a similar approach through
+the employment of magnetic reed switches and passive infrared sensors
+to take control of the HVAC system in residential buildings. However, those methods are
+more expensive for deployment as dedicated equipment is required.
+For the work \cite{dong2014real}, it uses $CO_2$,
+  motion, and acoustics to detect occupancy and achieves 92\%
+  accuracy.  The work \cite{majumdar2014energy} uses $CO_2$ and motion
+  sensors to build a probability model using history data of 3 months, which is
+  used in energy-comfort optimization. A multiple sensor network
+  method is proposed in \cite{yang2016review} for occupancy
+  detection.
 
-\usepackage{graphicx}
-\usepackage[cmex10]{amsmath}
+One viable and cost-efficient approach for the occupancy detection is
+to leverage existing temperature sensors or temperature sensor
+networks already deployed in many residual and commercial
+buildings. As human being will lead to small disruptions or
+perturbations of temperature in a room, temperature sensor information
+can be analyzed to detect the occupancy and even the number of persons
+without additional cost.
+In this work, we propose a novel approach to detect occupancy based on
+the temperature sensor information under specific conditions by
+applying machine learning methods, while it does not require many
+sensors to be installed in a certain building.  We generate the
+mathematical models based on support vector regression (SVR) and
+recurrent neural network (RNN) to detect occupancy with two sets of
+features for different application situations.
+Different from
+  aftermentioned methods, we build a machine learning model for
+  occupancy detection by carefully selecting some features including
+  solar angle, indoor temperature, outdoor temperature, working
+  time, and light energy. Comparing to the work \cite{dong2014real},
+  our RNN method can achieve higher than 99\% accuracy using two or
+  more hidden recurrent layers. Artificial neural network (ANN) is
+  applied in occupation detection works \cite{lam2009occupancy} in a
+  feed-forward manner, not capturing periodical patterns as using a
+  recurrent neural network. The above works didn't take historical data into
+  account, which is important in patterned (e.g.  weekly, seasonal) occupancy
+  prediction. Other machine learning techniques, such as support vector machine
+  (SVM) and hidden Markov model are also evaluated and 75\% estimation accuracy
+  was achieved.
 
-\usepackage{booktabs}
+We remark that SVR and RNN methods are widely used in non-linear
+  regression applications because of their good interpolation
+  performance.  We started with SVR as it is a widely used traditional
+  machine learning algorithm. Then we experimented the RNN network for the
+  same problem as an RNN is able to efficiently capture
+  frequency-domain characteristics in its recurrent neurons, modeling
+  a non-linear dynamic system underlying, which is an advantage of
+  being awareness of daily, weekly, and seasonal occupation patterns.
+  As a result, we are able to compare the traditional machine learning
+  algorithm with recent deep learning technique for our problem. The
+  comparison indeed sheds some interesting lights on this problem for
+  the two methods as discussed later.  It should be noted that
+  other machine learning method such as logistic regression, multivariate
+  adaptive regression splines, and long short term memory, can be used for
+  occupancy detection for smart buildings as well.
 
-\acmVolume{TBD}
-\acmNumber{TBD}
-\acmYear{TBD}
-\acmMonth{TBD}
-
-\let\orgsetcounter\setcounter
-\usepackage{calc}
-
-%\usepackage{cite}
-%\usepackage{natbib}
-\usepackage{graphicx}
-\usepackage[dvips]{color}
-\usepackage{epsfig}
-%\usepackage{spacing}
-\usepackage{subfigure}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{algorithm}
-\usepackage{algorithmic}
-\usepackage{url}
-\usepackage{arydshln}
-\usepackage{multirow}
-\usepackage{xcolor}
-\usepackage{lastpage}
-
-\definecolor{feb18rev}{rgb}{0.8, 0, 0}
-
-\newcommand{\setRn}{\mathbb{R}_{}^N}
-\newcommand{\setR}{\mathbb{R}}
-\newcommand{\ud}{\,\mathrm{d}}
-\newcommand{\res}[1]{\mathbf{r}^{(#1)}}
-\newcommand{\vtr}[1]{\mathbf{#1}}
-\newcommand{\mtx}[1]{\mathbf{#1}}
-\newcommand{\mtxPhi}{\boldsymbol{\phi}}
-\newcommand{\mT}{\mathrm{T}}
-
-\newcommand{\real}{\mathrm{Re}}
-\newcommand{\rad}{\mathrm{rad}}
-\newcommand{\emin}{\mathrm{emin}}
-\newcommand{\emax}{\mathrm{emax}}
-\newcommand{\omin}{\mathrm{omin}}
-\newcommand{\omax}{\mathrm{omax}}
-
-\renewcommand{\algorithmicrequire}{\textbf{Input:}}
-\renewcommand{\algorithmicensure}{\textbf{Output:}}
-\renewcommand{\algorithmiccomment}[1]{\% \textit{#1}}
-
-\newcommand{\BibTeX}{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
-
-
-\newcounter{numberlistc}
-\newenvironment{numberlist}
-    {   \setcounter{numberlistc}{0}
-        \begin{list}{\arabic{numberlistc}.}
-        {\usecounter{numberlistc}
-        \setlength{\parsep}{0pt}
-        \setlength{\topsep}{3pt}
-        \setlength{\itemsep}{0pt}}
-        }{ \end{list} }
-\newcounter{itemlistc}
-\newcounter{enumlistc}
-%\renewcommand{\theromanlistc}{(\roman{romanlistc})} %for ref use
-%\renewcommand{\thealphlistc}{(\alph{alphlistc})}    %for ref use
-\newenvironment{itemlist}
-    {   \setcounter{itemlistc}{0}
-    \begin{list}{$\bullet$}
-        {\usecounter{itemlistc}
-        \setlength{\parsep}{0pt}
-        \setlength{\topsep}{3pt}
-        \setlength{\itemsep}{0pt}}
-        }{ \end{list} }
-
-
-
-% correct bad hyphenation here
-\hyphenation{op-tical net-works semi-conduc-tor IEEEtran Gra-mian
-  Gra-mians Kry-lov}
-
-
-% paper title
-\title{Thermal-Sensor-Based Occupancy Detection For Smart Buildings Using Machine Learning Methods}
-
-\author{ \small
-HENGYANG ZHAO\\
-University of California, Riverside\\
-QI HUA, HAI-BAO CHEN and YAOYAO YE \\
-Shanghai Jiao Tong University\\
-%HAIBAO CHEN and YAOYAO YE\\
-%Shanghai Jiao Tong University\\
-HAI WANG \\
-University of Electronic Science and Technology of China\\
-SHELDON X.-D. TAN \\
-University of California, Riverside\\
-%XIN LI\\
-%Duke University\\
-ESTEBAN TLELO-CUAUTLE \\
-INAOE and CINVESTAV, Mexico
-}
-
-\markboth{Hengyang Zhao \textit{et al.}}{Thermal-Sensor-Based Occupancy Detection For Smart Buildings Using Machine Learning Methods}
-
-\begin{abstract}
-  In this article, we propose a novel approach to detect the occupancy
-  behavior of a building through the temperature and/or possible heat
-  source information. The new method can be used for energy reduction and
-  security monitoring for emerging smart buildings. Our work is based
-  on a building simulation program, EnergyPlus, from
-  Department of Energy. EnergyPlus can model various time-series
-  inputs to a building such as ambient temperature, heating,
-  ventilation, and air-conditioning (HVAC) inputs, power consumption
-  of electronic equipment, lighting, and number of occupants in a room,
-  sampled in each hour and produce resulting temperature traces of
-  zones (rooms). Two machine learning based approaches for detecting
-  human occupancy of a smart building are applied herein, namely:
-  support vector regression (SVR) and recurrent neural network
-  (RNN). Experimental results with SVR show that the
-  4-feature model provides accurate detection rate giving a 0.638
-  average error and 5.32\% error rate, and the 5-feature model delivers
-  0.317 average error and 2.64\% error rate. This indicates that SVR
-  is a viable option for occupancy detection. In RNN method, Elman's
-  RNN (ELNN) can estimate occupancy information of each room of a
-  building with high accuracy. It has local feedbacks in each layer
-  and for a 5-zones building it is very accurate for occupancy
-  behavior estimation. The error level, in terms of number of people,
-  can be as low as 0.0056 on average and 0.288 at maximum considering
-  ambient, room temperatures and HVAC powers as detectable
-  information. Without knowing HVAC powers, the estimation error can
-  still be 0.044 on average, and only 0.71\% estimated points have
-  errors greater than 0.5. Our study further shows that both methods
-  deliver similar accuracy in the occupancy detection. But the SVR
-  model is more stable for adding or removing features of the system, while the
-  RNN method can deliver more accuracy when the features used in the
-  model do not change a lot.
-\end{abstract}
+The new approach is based on machine learning
+  approaches in which thermal-related features including room
+  temperature, ambient temperature, and other related heat sources for
+  detecting the number of people in a room.  The experiments are
+  conducted by using a building simulation program,
+  EnergyPlus \cite{energyplus:2001vf}, from Department of Energy,
+  which can model the various time-series inputs to a building such as
+  ambient temperature, heating, ventilation, air-conditioning
+  inputs, power consumption of electronic equipment, lighting, and
+  number of occupants in a room, sampled in each hour and produce
+  resulting temperature traces of zones (rooms).  Experimental
+results with the SVR method show that the 4-feature model provides accurate
+detection rate giving a 0.638 average error and 5.32\% error rate, and
+the 5-feature model gives a 0.317 average error and 2.64\% error
+rate. This indicates that SVR is a viable option for occupancy
+detection.  In the RNN method, we apply the Elman's recurrent neural
+network, which has local feedbacks in each hidden layer. We use a simple
+formula to calculate layer numbers and sizes to configure RNN
+to avoid overfitting and underfitting problems. The error
+level, in terms of number of people can be as low as 0.0056 on average
+and 0.288 at maximum considering ambient, room temperatures and HVAC
+powers as detectable information. Without knowing HVAC powers, the
+estimation error can still be 0.044 on average, and only 0.71\%
+estimated points have errors greater than 0.5. Our study further shows
+both methods can deliver similar accuracy in the occupancy
+detection. But the SVR model is more stable for
+  adding or removing features of the system, while the RNN method can
+  deliver better accuracy when the features used in the model do not
+  change a lot. Comparing to first-principle methods, SVR and
+  RNN methods work in a black-box way, which reduces the efforts of
+  explicitly building model of occupancy detection and deployment of sensor
+  network, while good detection accuracy can still be achieved, as shown in the
+  result section. Our major contributions are listed as
+  following:
+\begin{itemize}
+\item We use thermal system consistency to detect occupancy using other
+    thermal-related parameters acquired by existing sensors, which dramatically
+    reduces the deployment effort, such as elimination of the requirement
+    of infrared sensors.
+\item We apply machine learning techniques, such as deep recurrent neural
+    networks, to explore the possibility and accuracy of occupancy detection.
+    This does not require explicit application-specific or building-specific
+    modeling.
+\item Two machine learning methods are thoroughly compared in terms of accuracy,
+    using different feature sets, which highlights the importance of certain
+    significant features, such as HVAC power consumption.
+\item We use dynamic machine learning models (e.g. recurrent neural network
+    instead of non-recurrent alternatives) such that periodical occupancy
+    patterns can be taken into account.
+\end{itemize}
 
 
-
-\category{J.6}{Computer-Aided Engineering}{Computer-Aided Design}
-
-\terms{Design, Algorithm}
-
-\keywords{Smart building; support vector regression; neural network; indoor temperature; occupancy detection.}
-
-\begin{document}
-
-{\let\setcounter\orgsetcounter
-\begin{bottomstuff}
-  \newline \indent This work is supported in part by UC MEXUS-CONACYT
-  Collaborative Research Grants CN16-161 and in part by the Nature
-  Science Foundation of China (NSFC) under No. 61604095.
-
-  Corresponding author: Hai-Bao Chen; email: haibaochen@sjtu.edu.cn.
-
-\end{bottomstuff}
-}
-
-\maketitle
-
-\input intro.tex
-
-\input energyplus_review.tex
-
-\input machine_learning_review.tex
-
-\input proposed_approach.tex
-
-\input experiments.tex
-
-
-\section{Conclusion and future works}
-\label{sec:conclution}
-
-In this article, we propose machine learning based methods to
-detect the occupancy behavior of a building through the temperature
-and/or possible heat source information. Supporting vector regression and recurrent neutral
-network methods, which are developed for smart buildings through the thermal sensor
-temperature information and/or possible heat source information, have
-been discussed. In all experiments, we use the realistic building
-simulation program EnergyPlus to collect training and validation
-data sets. Ambient factors, room temperature, and/or HVAC power were
-selected as features to train Elman's recurrent neural network.
-In SVR model, two sets of features are offered to feed off the
-model for different conveniences. The first set of features is
-comprised of 4 features including solar factor, working time, indoor
-temperature and outdoor temperature, which are regarded as easily
-obtained features; whereas the second set of features adds light
-energy as the fifth feature. In light of the experimental results,
-4-feature model has a quite accurate detection rate which gives a
-0.638 average error and 5.32\% error rate. However, 5-feature SVR
-model giving a 0.317 average error and 2.64\% error rate has a better
-performance than 4-feature model, which we consider as moderating the
-under-fitting issue. This indicates that using SVR model is a viable
-option when it comes to occupancy detection given its convenience in
-data acquirement. In the recurrent neutral network based method, the
-resulting Elman network can estimate occupancy information of each
-room of a building with high accuracy. Using ambient factors and room
-temperatures only, the average estimation error is 0.044, and only
-0.71\% of the estimated points have errors greater than 0.5 in terms
-of number of people. This indicates that it is possible to precisely
-estimate the occupancy only using ambient factors and room
-temperatures. With HVAC powers added, the estimation can be even more
-accurate with simpler neural networks.  Our study further shows
-both methods can deliver similar accuracy in the occupancy detection.
-But the SVR model is more stable for adding or removing a feature
-from the feature pool, while the RNN method can deliver more accuracy when the features used
-in the model do not change a lot.
-
-\bibliographystyle{acmtrans}
-%\bibliography{../../bib/mscad_pub,../../bib/thermal_power,../../bib/stochastic,../../bib/architecture,../../bib/simulation,../../bib/modeling,../../bib/reduction,../../bib/interconnect,../../bib/misc}
-%\bibliography{../../bib/hmatrix_ref,../../bib/reliability.bib,../../bib/reliability_papers,../../bib/stochastic,../../bib/simulation,../../bib/modeling,../../bib/reduction,../../bib/misc,../../bib/architecture,../../bib/mscad_pub,../../bib/thermal_power}
-\bibliography{title2}
-
-\end{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%% File Stops Here %%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Hao's significant spelling errors, such as ``s-expended'',
-% are corrected.
-%
-% Manually enforced line spacings are appropriately adjusted.
-%
-% Overlong tables are modified.
-%
-% Bad fonts and shapes in texts and equations are replaced.
+The rest of this paper is organized as the following.
+Section~\ref{sec:energy_plus_review} reviews the EnergyPlus program used for
+generating realistic building data. Section~\ref{sec:machine_learning_review}
+reviews the two machine learning methods SVR and Elman's recurrent neural
+network (ELNN) used in this work. Section~\ref{sec:proposed_methods} introduces
+the two methods for the given problems of occupancy detections based on the
+thermal sensor information. Then the experimental results based on the two
+methods, discussions and comparison between the two methods are presented in
+Section~\ref{sec:results}. Section~\ref{sec:conclution} concludes this paper.
