@@ -53,9 +53,9 @@ best result for the model, the set of parameters is adjusted step by
 step to obtain a model which has a better accuracy than the previous
 one. After a batch of experiments for the model are conducted, we pick
 out the parameters in the model that brings about the best
-performance. Here we also want to highlight, that most of the time,
-the parameters working best for a model sometimes can not be proved
-theoretically, therefore confirmed parameters often are determined by
+performance. Here we also want to highlight, most of the time,
+the best choice of the parameter set is usually difficult to be theoretically proved,
+therefore confirmed parameters often are determined by
 a great number of trials and experiments.
 
 Table \rom{1} shows the training error statistics of the proposed SVR
@@ -153,8 +153,8 @@ proposed SVR model. To obtain the best parameter setting in the SVR model used
 for occupancy detection, we need to constantly compare the gap between the
 training and testing errors for the collected data sets by EnergyPlus. If the
 gap of accuracy between training and testing errors are relatively large, which
-means that this model is over-fitting on the training data. In accuracy on
-training data implies that the model has a potential under-fitting. In this
+means that this model is over-fitting on the training data. The accuracy of training
+data implies that the model has a potential under-fitting. In this
 situation, we need to adjust parameters to make the SVR-based model work
 better.
 
@@ -174,7 +174,7 @@ in the range from 10 to 1000.
 
 The two sets of features provide different convenience in detecting to meet
 different demand. The first set of features  can be relatively easily acquired
-while the second set requests more efforts. The first set of feature only
+while the second set requires more effort. The first set of feature only
 requires data set that can be obtained from mathematical computation, whereas the
 second set  requires light energy which is a set of statistics that needs more
 effort to achieve. In terms of practical application, it is suggested to choose
@@ -183,8 +183,8 @@ improvement can be considered by building model revolving around absorbing the
 current data set into the SVR model, which makes the model work as a dynamic
 equation that is able to self-improved by newly absorbed data set and remain
 more effectively according to the current circumstance. Most importantly, it is
-suggested to choose the most efficient approach based on the facing situation,
-after all, the model is able to fulfill ordinary demand in accuracy in
+suggested to choose the most efficient approach based on the specific situation.
+After all, the model is able to fulfill ordinary demand in accuracy in
 4-feature model. Further improvement is likely to happen if one considers
 specific conditions for other office in detail.
 
@@ -198,7 +198,7 @@ Fig.~\ref{fig:elman} is used for occupancy detection in a building.
 EnergyPlus takes outdoor thermal factors (such as ambient temperatures and solar
 factors), people occupancy and HVAC related powers as input, and produce the
 temperatures of rooms as its output. People occupancy is in unit of number of
-people, which maybe decimal as it represents average people count over a short
+people, which may have fraction part as it represents average people count over a short
 time span. We treat all the data used and produced by EnergyPlus equally as
 real-world factors, regardless they were inputs or outputs of EnergyPlus. In the
 occupancy estimation work, we select data from those real-world factors, feed
@@ -227,7 +227,7 @@ respectively each room's estimated people occupancy.
 
 In practical smart-building applications, room temperatures are easy to acquire
 from the installed sensors. Ambient temperature, solar factors are also
-relatively easier to be acquired or calculated. While other factors, such as
+relatively easy to be acquired or calculated. While other factors, such as
 HVAC cooling or heating powers, electrical equipment powers and air
 infiltrations, need more instruments to per-room estimate in real-time. Because
 of these limitations, we select two different sets of real-world factors as the
@@ -326,7 +326,7 @@ data configurations I and II.
 \begin{table}[t]
     \centering
     \begingroup
-    \setlength{\tabcolsep}{3.6pt} 
+    \setlength{\tabcolsep}{3.6pt}
     \begin{tabular}{lrrcrrcrr}
         \toprule
         & \multicolumn{2}{c}{1 Hidden Layer} && \multicolumn{2}{c}{2 Hidden Layers} && \multicolumn{2}{c}{3 Hidden Layers}\\
@@ -365,7 +365,7 @@ data configurations I and II.
     \label{tab:verr-stat}
 \end{table}
 
-In data configuration I, one-layer network suffers from under-fitting
+In configuration I, one-layer network suffers from under-fitting
 problem (about 20\% data points have errors greater than 0.5). This is
 because the network needs more internal status to have the capability
 to estimate the people occupancy only use room and ambient
@@ -375,7 +375,7 @@ for 3-layer). Experiment results show that the RNN is able to estimate
 people occupancy only with ambient and room temperatures with a good
 accuracy (lower than 1\%).
 
-In the configuration II, we provide more information (HVAC powers)
+In configuration II, we provide more information (HVAC powers)
 for the occupancy training process than the configuration I. As a
 result, the ELNN with only two hidden recurrent layers can
 already perform quite well (no points having error grater than 0.5
@@ -401,14 +401,14 @@ outcome, and the blue curve stands for the RNN outcome.  Those results
 are generated based on the same features and number of data, which
 means, the different results shown in the figure are only influenced
 by the models. From the figure, we can see that the results from both
-methods agree well with the original curves.  Furthmore, we obseve
-there is a small fluctuation in Max.~error when the SVR model is
+methods agree well with the original curves. Furthermore, we observe
+there is a small fluctuation in maximum error when the SVR model is
 applied. This indicates the maximum error of the SVR model will stay
 at a stable range when the features of the model are slightly
-changed. In comparison, Max.~error of the RNN model is relatively more
-sensitive. The Max.~error may double, triple, or rapidly diminishes
+changed. In comparison, maximum error of the RNN model is relatively more
+sensitive. The maximum error may double, triple, or rapidly diminishes
 when the features of the model is changed. This phenomenon is also
-observed in the Avg.~error. The numeric value of Avg.~error swings
+observed in the average error. The numeric value of average error swings
 more for the RNN model than for the SVR model under the situation that
 the features are changed. This could imply the two different
 characteristic behaviors of the two models, which gives the user the
@@ -443,4 +443,3 @@ We remark that since SVR has great
   activity. As a result, occupancy behavior can be accurately
   determined by using the selected machine learning methods with time
   series analysis.
-
